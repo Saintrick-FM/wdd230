@@ -1,0 +1,29 @@
+@media screen and (min-width: 768px) {
+    nav{
+      /* display: grid; */
+      grid-template-columns: repeat(4, 25%) !important; 
+      gap: 0;
+      width: 100%;
+    }
+    .nav-bar{
+      padding: 0;
+    }
+    .main-section {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 65% 35%;
+      gap: 20px;
+      /* display: flex; */
+      justify-content: space-between;
+      align-items: start;
+      margin-top: 25px;
+    }
+    main{
+      margin-top: 0px;
+    }
+    .main-section .card {
+      box-shadow: var(--box-shadow);
+      display: flex;
+      flex-direction: column;
+    }
+  } 
