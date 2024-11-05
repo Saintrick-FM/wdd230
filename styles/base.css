@@ -106,7 +106,7 @@
     margin-top: 25px;
   }
   
-  .main-section .card {
+  .main-section .card { 
     box-shadow: var(--box-shadow);
     display: flex;
     flex-direction: column;
@@ -114,13 +114,13 @@
   }
   
   
-  .right .card-content {
+  .card .card-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .right .card-content p {
+  .card .card-content p {
     margin-bottom: 15px;
   }
   .card-content {
