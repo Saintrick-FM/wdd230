@@ -1,6 +1,5 @@
 @media screen and (min-width: 768px) {
     nav{
-      /* display: grid; */
       grid-template-columns: repeat(4, 25%) !important; 
       gap: 0;
       width: 100%;
@@ -13,7 +12,6 @@
       width: 100%;
       grid-template-columns: 65% 35%;
       gap: 20px;
-      /* display: flex; */
       justify-content: space-between;
       align-items: start;
       margin-top: 25px;
@@ -25,5 +23,12 @@
       box-shadow: var(--box-shadow);
       display: flex;
       flex-direction: column;
+    }
+
+    .activity{
+      flex-direction: row;
+      align-items: center;
+      justify-content: left;
+      width: 100%;
     }
   } 
