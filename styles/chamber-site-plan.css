@@ -53,6 +53,7 @@ section:not(#site-name) p {
     width: 15px;
     height: 15px;
     border-radius: 3px;
+    margin: 5px 10px 0 10px;
 }
 
 .primary {
