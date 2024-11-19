@@ -1,14 +1,35 @@
 @media screen and (min-width: 768px) {
-    nav{
+  nav{
+      display: grid;
       grid-template-columns: repeat(4, 25%) !important; 
+      background-color: black; 
       gap: 0;
       width: 100%;
+    }
+    main.go-up {
+      margin-top:0px
+    }
+    header{
+      display: flex;
+      justify-content: center;
+      align-items:center;
+      padding: 15px 0 ;
+    }
+    div.name{
+      font-size: 2.5rem;
+    }
+    .nav-box{
+      height: 100%;
     }
     .nav-bar{
       padding: 0;
     }
+    .box1.close, .box2.close, .box3.close, .box4.close{
+      display:flex
+    }
     .main-section {
       display: grid;
+      height: 100%;
       width: 100%;
       grid-template-columns: 65% 35%;
       gap: 20px;
@@ -24,11 +45,18 @@
       display: flex;
       flex-direction: column;
     }
+    main h1 {
+      color: var(--text-color);
+      text-align: left;
+    }
 
     .activity{
       flex-direction: row;
       align-items: center;
       justify-content: left;
       width: 100%;
+    }
+    .burger-menu{
+      display:none
     }
   } 

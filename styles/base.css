@@ -21,6 +21,7 @@
     grid-template-rows: 15% 10% 1fr auto;
     font-family: "Roboto", sans-serif; 
     height: 100vh;
+ 
   }
   
   header {
@@ -31,38 +32,37 @@
       var(--primary-color),
       var(--secondary-color)
     ); /* Gradient background */
-    padding: 15px 0;
+    padding: 15px 10px 15px 50px;
     grid-column: 1 / 3;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     height: auto;
   }
-  header img {
+  header  img {
     width: auto;
     height: 95%;
     margin-right: 50px;
     border-radius: 10%;
     box-shadow: var(--box-shadow);
   }
-  header span {
+  div.name {
     color: white;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 400;
   }
   nav {
     position: relative;
     grid-column: 1 / 3;
-    background-color: #bed;
-    display: grid;
+  
     grid-template-columns: 100%;
     /* gap: 10px; */
     height: auto;
     justify-content: center;
     align-items: center;
   }
-  .nav-box {
-    height: 100%;
+  nav div {
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,12 +70,13 @@
     color: white !important; 
     padding: 10px 0;
   }
-   nav .nav-box.active {
+   nav div.active {
+    height: 100%;
     background: #643219;
   } 
-  .nav-box:hover{
-   
-    background: rgba(0, 0, 0, 0.5)!important; ;
+  nav div:hover{
+   height: 100%;
+    background: grey;
     padding-inline:20px;
     cursor: pointer;
   }
@@ -83,11 +84,22 @@
     text-decoration: none;
     color: white;
   }
-  
+  .box1.close, .box2.close, .box3.close, .box4.close{
+    display:none
+  }
   main {
     background: #ffffff;
     height: 100%;
-    margin-top: 75px;
+    margin-top: 155px;
+    padding: 2rem 3rem;
+    grid-column: 1 / 3;
+    display: flex;
+    flex-direction: column;
+  }
+  main.go-up {
+    background: #ffffff;
+    height: 100%;
+    margin-top: -55px;
     padding: 2rem 3rem;
     grid-column: 1 / 3;
     display: flex;
@@ -95,6 +107,7 @@
   }
   main h1 {
     color: var(--text-color);
+    text-align: center;
   }
   
   .main-section {
@@ -179,3 +192,26 @@ margin-left: 15px;
     color: #ccf91d;
     margin-top: 10px;
   }
+
+ /* Burger Menu Styles */
+.burger-menu {
+  display: flex; /* Hidden by default */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 50px;
+  z-index: 10;
+}
+
+.burger-menu .line {
+  background-color: white;
+  height: 3px;
+  width: 100%;
+  border-radius: 5px;
+}
