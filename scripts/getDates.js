@@ -13,7 +13,7 @@ document.getElementById("lastModified").textContent =
     const box2 = document.querySelector(".box2");
     const box3 = document.querySelector(".box3");
     const box4 = document.querySelector(".box4");
-    const main = document.querySelector("main");
+    const mainTitle = document.querySelector("h1");
   
     burgerMenu.addEventListener("click", () => {
       navBoxes.classList.toggle("close");
@@ -22,8 +22,23 @@ document.getElementById("lastModified").textContent =
       box2.classList.toggle("close");
       box3.classList.toggle("close");
       box4.classList.toggle("close");
-      main.classList.toggle("go-up");
+      mainTitle.classList.toggle("go-up");
       
     });
+  });
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleTheme = document.getElementById('theme-toggle');
+  
+    toggleTheme.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme); // Save preference
+    });
+  
+    // Load saved theme on page load
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
   });
   
