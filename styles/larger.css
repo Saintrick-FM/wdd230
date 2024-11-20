@@ -3,6 +3,9 @@
     max-height: 100vh;
     overflow-x: hidden;
   }
+  header img{
+    margin-right: 50px;
+  }
   nav{
       display: grid;
       grid-template-columns: repeat(4, 25%) !important; 

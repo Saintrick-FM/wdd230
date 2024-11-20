@@ -86,7 +86,7 @@ header {
   header  img {
     width: auto;
     height: 95%;
-    margin-right: 50px;
+    margin-right: 10px;
     border-radius: 10%;
     box-shadow: var(--box-shadow);
   }
