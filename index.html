@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
 
     <!-- Social media -->
-    <meta property="og:url" content="https://saintrick-fm.github.io/wdd230/" />
-    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://saintrick-fm.github.io/wdd230/" >
+    <meta property="og:type" content="website" >
     <meta
       property="og:title"
       content="Francy Malonga - WDD 230 - Web Frontend Development Home page"
-    />
+    >
     <meta
       property="og:description"
       content="WDD 230 - Web Frontend Development 
     Francy Saintrick Malonga
     Course portal home page build"
-    />
+    >
     <meta
       property="og:image"
       content="https://github.com/Saintrick-FM/wdd230/blob/main/images/my-profile-picture.jpg?raw=true"
-    />
+    >
 
     <meta
       name="twitter:title"
       content="Francy Malonga - WDD 230 - Web Frontend Development Home page"
-    />
+    >
     <meta
       name="twitter:description"
       content="WDD 230 - Web Frontend Development 
 Francy Saintrick Malonga
 Course portal home page build"
-    />
+    >
     <meta
       name="twitter:image"
       content="https://github.com/Saintrick-FM/wdd230/blob/main/images/my-profile-picture.jpg?raw=true"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
+    >
+    <meta name="twitter:card" content="summary_large_image" >
     <!-- End Social media -->
 
     <title>Francy Malonga - WDD 230 - Web Frontend Development Home page</title>
@@ -46,32 +46,34 @@ Course portal home page build"
     Francy Saintrick Malonga
     Course portal home page build
     "
-    />
-    <meta name="author" content="Francy Saintrick Malonga" />
-    <link rel="stylesheet" href="styles/base.css" />
-    <link rel="stylesheet" href="styles/larger.css" />
-    <link rel="stylesheet" href="styles/theme-toggle.css" />
+    >
+    <meta name="author" content="Francy Saintrick Malonga" >
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css" >
+    <link rel="stylesheet" href="styles/larger.css" >
+    <link rel="stylesheet" href="styles/theme-toggle.css" >
   </head>
+
   <body>
     <header>
-      <img src="images/my-picture.jpg" alt="Profile Image" />
+      <img src="images/my-picture.jpg" width="50" height="50" alt="Profile Image" >
       <div class="name">Francy Malonga</div>
 
-      <button class="burger-menu" aria-label="Toggle navigation">
+      <button class="burger-menu" name="burger-menu">
         <span class="line first"></span>
         <span class="line second"></span>
         <span class="line third"></span>
       </button>
-      <button id="theme-toggle" aria-label="Toggle theme">
-        <div>
-          <input type="checkbox" class="checkbox" id="checkbox" />
+      <div id="theme-toggle">
+        <span>
+          <input type="checkbox" class="checkbox" id="checkbox" >
           <label for="checkbox" class="checkbox-label">
             <span>🌙</span>
-            <span>☀️</span>
+            <span class="moon">☀️</span>
             <span class="ball"></span>
           </label>
-        </div>
-      </button>
+        </span>
+      </div>
     </header>
 
     <nav class="nav-boxes">

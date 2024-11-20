@@ -1,8 +1,20 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  /* Reinforce your border-box calculation */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* General body margins restored */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Restore header spacing */
+header {
+  padding: 15px 10px 15px 50px;
+}
+
   :root {
     --primary-color: #1c4d72; /* Primary color */
     --card-head:#1c4d72;
@@ -49,14 +61,11 @@
   
   
   body {
-    font-family: "Ubuntu Sans Mono", monospace;
     font-style: normal;
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-rows: 15% 10% 1fr auto;
-    font-family: "Roboto", sans-serif; 
     height: 100vh;
- 
   }
   
   header {
@@ -136,8 +145,11 @@
   .box1.close, .box2.close, .box3.close, .box4.close{
     display:flex
   }
+  .moon{
+    color: yellow;
+    margin-right: 1px;
+  }
   main {
-
     background: var(--main-bg);
     height: 100%;
     margin-top: 0px;
@@ -151,7 +163,6 @@
     margin-top: 155px;
   } 
   main h1 {
-    
     color: var(--main-title);
     text-align: center;
     margin-top: 0px;
@@ -247,7 +258,7 @@ margin-left: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 25px;
+  width: 40px;
   height: 20px;
   background: none;
   border: none;
@@ -278,6 +289,6 @@ margin-left: 15px;
 }
 
 .burger-menu.open .line:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
