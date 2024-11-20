@@ -12,9 +12,11 @@
     --text-color: #333333; /* Light mode text */
     --main-bg: #ffffff; /* Card background */
     --nav-bg: #000000; /* Navigation background */
+    --main-title:#000000;
     --nav-hover: grey; /* Navigation hover */
     --nav-active: #643219; /* Active navigation item */
     --footer-bg: #1c4d72; /* Footer background */
+    --footer-text: #ffffff;
     --last-modified-color: #ccf91d; /* Last modified text */
     --burger-line-color: white; /* Burger menu lines */
     --border-color: #1c2d5d; /* Border color */
@@ -28,6 +30,7 @@
     --secondary-color: #1c2d5d; /* Secondary color */
     --card-head: #f9f9f9; /* Card head */
     --card-content: #f9f9f9; /* Card head */
+    --main-title:#f9f9f9;
     --background-color: #f9f9f9; /* Light mode background */
     --text-color: #333333; /* Light mode text */
     --main-bg: #434242; /* Card background */
@@ -35,6 +38,7 @@
     --nav-hover: grey; /* Navigation hover */
     --nav-active: #643219; /* Active navigation item */
     --footer-bg: #1c4d72; /* Footer background */
+    --footer-text: #f9f9f9;
     --last-modified-color: #ccf91d; /* Last modified text */
     --burger-line-color: white; /* Burger menu lines */
     --border-color: #1c2d5d; /* Border color */
@@ -78,7 +82,6 @@
     box-shadow: var(--box-shadow);
   }
   #theme-toggle {
-   
     cursor: pointer;
     position: absolute;
     right: 20px;
@@ -143,7 +146,8 @@
     margin-top: 0px;
   } 
   main h1 {
-    color: var(--text-color);
+    
+    color: var(--main-title);
     text-align: center;
     margin-top: 155px;
   }
@@ -171,7 +175,6 @@
     align-items: center;
     gap: 15px;
     padding: 20px;
-
     background-color: var(--card-content);
   }
 
@@ -184,7 +187,6 @@
   }
   .card-head h2{
     color: var(--main-bg)
-  
   }
 
   li {
@@ -222,7 +224,7 @@
     /* background: var(--primary-color);
     color: white; */
     background: var(--footer-bg);
-    color: var(--main-bg);
+    color: var(--footer-text);
     padding: 2rem;
     text-align: center;
     grid-column: 1 / 3;

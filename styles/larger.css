@@ -50,7 +50,7 @@
       flex-direction: column;
     }
     main h1 {
-      color: var(--text-color);
+      color: var(--main-title);
       text-align: left;
       margin-top: 0px;
     }
