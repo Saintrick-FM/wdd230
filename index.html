@@ -50,25 +50,29 @@ Course portal home page build"
     <meta name="author" content="Francy Saintrick Malonga" />
     <link rel="stylesheet" href="styles/base.css" />
     <link rel="stylesheet" href="styles/larger.css" />
+    <link rel="stylesheet" href="styles/theme-toggle.css" />
   </head>
   <body>
- 
     <header>
-     
-        <img src="images/my-picture.jpg" alt="Profile Image" />
-        <div class="name">Francy Malonga</div>
-     
+      <img src="images/my-picture.jpg" alt="Profile Image" />
+      <div class="name">Francy Malonga</div>
+
       <button class="burger-menu" aria-label="Toggle navigation">
         <span class="line first"></span>
         <span class="line second"></span>
         <span class="line third"></span>
       </button>
       <button id="theme-toggle" aria-label="Toggle theme">
-        🌙
-        <!-- <img src="./images/dark-theme.svg" alt="theme toggle"> -->
+        <div>
+          <input type="checkbox" class="checkbox" id="checkbox" />
+          <label for="checkbox" class="checkbox-label">
+            <span>🌙</span>
+            <span>☀️</span>
+            <span class="ball"></span>
+          </label>
+        </div>
       </button>
     </header>
-    
 
     <nav class="nav-boxes">
       <div class="box1 active">

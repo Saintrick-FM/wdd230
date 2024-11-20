@@ -28,7 +28,7 @@
     .nav-bar{
       padding: 0;
     }
-    .box1.close, .box2.close, .box3.close, .box4.close{
+    .box1, .box2, .box3, .box4{
       display:flex
     }
     .main-section {

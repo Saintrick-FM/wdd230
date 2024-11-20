@@ -28,7 +28,8 @@ document.getElementById("lastModified").textContent =
   });
   
   document.addEventListener('DOMContentLoaded', () => {
-    const toggleTheme = document.getElementById('theme-toggle');
+  
+    const toggleTheme = document.getElementById('checkbox');
   
     toggleTheme.addEventListener('click', () => {
       const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -41,4 +42,8 @@ document.getElementById("lastModified").textContent =
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
   });
-  
+ 
+  const checkbox = document.getElementById("checkbox")
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark")
+})
