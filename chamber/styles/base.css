@@ -1,135 +1,348 @@
-/* Global Styles */
-:root{
-    --primary-color: #004f72; /* Primary color */
-    --secondary-color: #0077b6; /* Secondary color */
-    --background-color: #f5f5f5; /* Background color */
-    --text-color: #333; /* Text color */
-}
-body {
+*{
+    padding: 0;
     margin: 0;
-    font-family: 'Merriweather', serif;
-    line-height: 1.6;
-    color: #333;
-
+}
+:root {
+  --primary-color: #004f72;
+  --secondary-color: #0077b6;
+  --background-color: #f5f5f5;
+  --text-color: #333;
 }
 
-h1, h2 {
-    font-family: 'Roboto', sans-serif;
-    margin: 0 0 0.5em;
-    color: #1D3557;
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+ a:hover {
+    text-decoration: underline;
+  }
+h1,
+h2,
+h3 {
+  margin: 0 0 10px;
+  text-align: center;
 }
 
 ul {
-    padding-left: 1.5em;
+  list-style: none;
+  padding: 0;
 }
 
-p, ul li {
-    margin: 0 0 1em;
+button {
+  cursor: pointer;
 }
-.logo{
-    color: black;
-    margin-bottom: 5px;
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-.hero img {
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+}
+.footer-logo {
+  width: 100px;
+  height: 100px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+header .menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* Burger Menu Styles */
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 35px;
+  z-index: 10;
+  transition: transform 0.3s ease-in-out;
+}
+
+.burger-menu .line {
+  background-color: white;
+  color: white !important;
+  height: 3px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Transition to Close Icon */
+.burger-menu.open .line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.burger-menu.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.open .line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* General styles for main content */
+main {
+  padding: 0 2rem; /* Adds space on left and right */
+  margin: 0 auto;
+  max-width: 1200px; /* Ensures content doesn’t span too wide */
+}
+
+/* Footer styles */
+footer {
+  
+  display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .social-links,
+footer .links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.footer-nav,
+.social-icons, footer p {
+  display: flex;
+
+  justify-content: center;
+  gap: 30px;
+}
+.social-icons{
+gap:50px
+}
+@media (max-width: 768px) {
+  footer .social-links,
+  footer .links {
+    flex-direction: column; /* Stack items vertically */
+  }
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; /* Default to column layout for mobile */
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column; /* Stack the text and image on small screens */
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-text {
+  height: 100%;
+  text-align: left;
+}
+
+.hero-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-width: 600px; /* Limit the image width */
+}
+
+/* Hero Input styles */
+.hero-input input {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 10px;
+  width: 70%;
+  margin-top: 20px;
+}
+
+.hero-input button {
+  border-radius: 5px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.hero-input button:hover {
+  background-color: #0056b3;
+}
+
+/* Business Spotlights section */
+.business-spotlights {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.business-spotlights .card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.business-spotlights .card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.business-spotlights .card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.business-spotlights .card h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.business-spotlights .card p {
+  margin: 0.5rem 0;
+}
+
+.business-spotlights .card a {
+  color: #007bff;
+  text-decoration: none;
+}
+.navbar a {
+  margin-left: 20px;
+  color: white;
+}
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  width: 95%;
+  height: 2px;
+  background-color: #ddd;
+  margin: 50px auto;
+}
+/* Responsive Design for Larger Screens */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row; /* Switch to row layout on larger screens */
+    text-align: left;
+  }
+
+  .hero-content {
+    flex-direction: row; /* Align content side by side */
+    align-items: center;
+  }
+
+  .hero-text {
+    flex: 1;
+    text-align: left;
+  }
+
+  .hero-image-container {
+    flex: 0 0 40%; /* Image takes up 40% of width */
+  }
+
+  .hero-image {
     width: 100%;
     height: auto;
+    object-fit: cover;
+  }
 }
-/* Utility Classes */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+.main-title{
+    text-align: left !important;
 }
+.business-spotlights-title{
+    margin: 10px 0 40px 0;
+}
+/* For small screens */
+@media (max-width: 600px) {
+  main {
+    padding: 1rem; /* Reduce padding on smaller screens */
+  }
 
-.color-swatch {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
-    border-radius: 50%;
+  .business-spotlights {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 1rem;
+  }
 }
-
-.color-swatch.primary {
-    background-color: #457B9D;
-}
-
-.color-swatch.secondary {
-    background-color: #E63946;
-}
-
-.color-swatch.neutral {
-    background-color: #F1FAEE;
-}
-
-/* Header Styles */
-header {
-    background: #1D3557;
-    color: white;
-    text-align: center;
-    padding: 1rem ;
-}
-
-.header-container h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.header-container p {
-    font-size: 1.2rem;
-}
-
-.main-nav , #join-us{
-    display: none ;
-}
-
-/* Section Styles */
-section {
-    margin-bottom: 2rem;
-}
-
-/* Color Schema & Typography Section */
-#color-schema, #typography {
-    background-color: #F1FAEE;
-    padding: 1rem;
-    border-radius: 5px;
-    margin-top: 1rem;
-}
-
-/* Footer Styles */
-footer {
-    background: #457B9D;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .header-container h1 {
-        font-size: 1.5rem;
-    }
+  header nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    right: 1rem;
+    background: var(--text-color);
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  .hero-input button {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  header nav.active {
+    display: flex;
+  }
 
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    .container {
-        padding: 0 1rem;
-    }
-
-    #questions ul {
-        padding-left: 1em;
-    }
-}
-
-@media (min-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    #questions ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
+  header .menu-icon {
+    display: block;
+  }
 }

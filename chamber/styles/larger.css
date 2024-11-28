@@ -1,157 +1,64 @@
-:root{
-    --primary-color: #004f72; /* Primary color */
-    --secondary-color: #0077b6; /* Secondary color */
-    --background-color: #f5f5f5; /* Background color */
-    --text-color: #333; /* Text color */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: white;
 }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 3rem;
-    background-color: #f4f4f4;
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.logo img {
-    height: auto;
+.join-us {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
-.main-nav, #join-us{
-    display: flex ;
-    justify-content: center;
-    align-items: baseline;
-    gap: 6rem
-}
-#join-us{
-    background-color: var(--text-color);
-    color: var(--background-color);
-    padding: 12px 18px;
-    border: 2px solid var(--background-color);
-    border-radius: 10px;
+/* Scenarios Section */
+.faq-grid {
+  display: grid;
+  margin-bottom: 40px;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    list-style: none;
-}
-
-.nav-links a {
-    font-weight: bold;
-    text-decoration: none;
-    cursor: pointer;
-    color: var(--primary-color);
-}
-.nav-links a:hover{
-    color: var(--secondary-color);
-    text-decoration: underline;
-}
-
-/* Hero Section */
-.hero {
-    position: relative;
-    text-align: center;
-}
-
-
-
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 1rem;
-    border-radius: 5px;
-}
-
-/* Call-to-Action */
-.call-to-action {
-    text-align: center;
-    padding: 2rem;
-    background: #007BFF;
-    color: white;
-}
-
-.call-to-action .cta-btn {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    background: white;
-    color: #007BFF;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-/* Current Events */
-.current-events {
-    padding: 2rem;
-    background: #f9f9f9;
-}
-
-.current-events ul {
-    list-style: none;
-    padding: 0;
-}
-
-.current-events li {
-    margin-bottom: 1rem;
+.faq-item {
+  background: white;
+  padding: 20px;
+  border-radius: 5px; 
+  /* border: 1px solid var(--secondary-color); */
 }
 
 /* Footer */
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: #333;
-    color: white;
+.footer {
+  padding: 20px;
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+
 }
 
-/* Responsive Design */
-@media (min-width: 768px) {
-    .hero img {
-        width: 50%;
-        height: auto;
-    }
+.footer-nav a {
+  margin: 0 10px;
+  color: white;
 }
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 0.5rem;
-        background: #f4f4f4;
-        position: absolute;
-        right: 0;
-        top: 60px;
-        padding: 1rem;
-        border: 1px solid #ccc;
-    }
-    #join-us{
-        display: none;
-    }
-    .nav-links.active {
-        display: flex;
-    }
 
-    .hamburger {
-        display: flex;
-    }
+.social-icons a {
+  margin: 0 5px;
+  color: white;
+}
+.navbar a {
+  margin-left: 20px;
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .burger-menu {
+    display: none;
+  }
 }
