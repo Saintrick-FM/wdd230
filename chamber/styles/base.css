@@ -1,0 +1,135 @@
+/* Global Styles */
+:root{
+    --primary-color: #004f72; /* Primary color */
+    --secondary-color: #0077b6; /* Secondary color */
+    --background-color: #f5f5f5; /* Background color */
+    --text-color: #333; /* Text color */
+}
+body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    line-height: 1.6;
+    color: #333;
+
+}
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    margin: 0 0 0.5em;
+    color: #1D3557;
+}
+
+ul {
+    padding-left: 1.5em;
+}
+
+p, ul li {
+    margin: 0 0 1em;
+}
+.logo{
+    color: black;
+    margin-bottom: 5px;
+}
+.hero img {
+    width: 100%;
+    height: auto;
+}
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.color-swatch {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+
+.color-swatch.primary {
+    background-color: #457B9D;
+}
+
+.color-swatch.secondary {
+    background-color: #E63946;
+}
+
+.color-swatch.neutral {
+    background-color: #F1FAEE;
+}
+
+/* Header Styles */
+header {
+    background: #1D3557;
+    color: white;
+    text-align: center;
+    padding: 1rem ;
+}
+
+.header-container h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.header-container p {
+    font-size: 1.2rem;
+}
+
+.main-nav , #join-us{
+    display: none ;
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 2rem;
+}
+
+/* Color Schema & Typography Section */
+#color-schema, #typography {
+    background-color: #F1FAEE;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+/* Footer Styles */
+footer {
+    background: #457B9D;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header-container h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    #questions ul {
+        padding-left: 1em;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    #questions ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}

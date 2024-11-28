@@ -1,0 +1,260 @@
+
+:root {
+  --primary-color: #004f72;
+  --secondary-color: #0077b6;
+  --background-color: #f5f5f5;
+  --text-color: #333;
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+h1, h2, h3 {
+  margin: 0 0 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 50px;
+  height: 50px;
+}
+.footer-logo{
+  width: 100px;
+  height: 100px;
+
+}
+header nav {
+  display: flex;
+  gap: 1rem;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+header .menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* General styles for main content */
+main {
+  padding: 0 2rem; /* Adds space on left and right */
+  margin: 0 auto;
+  max-width: 1200px; /* Ensures content doesn’t span too wide */
+}
+
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+footer .social-links,
+footer .links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  footer .social-links,
+  footer .links {
+    flex-direction: column; /* Stack items vertically */
+  }
+}
+
+
+/* Hero section */
+.hero {
+  display: flex;
+  flex-direction: column; /* Default to column layout for mobile */
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column; /* Stack the text and image on small screens */
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-text {
+  text-align: left;
+}
+
+.hero-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-width: 600px; /* Limit the image width */
+}
+
+/* Hero Input styles */
+.hero-input input {
+  padding: 10px;
+  margin-right: 10px;
+  width: 80%;
+}
+
+.hero-input button {
+  padding: 10px 15px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-input button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Business Spotlights section */
+.business-spotlights {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.business-spotlights .card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.business-spotlights .card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.business-spotlights .card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.business-spotlights .card h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.business-spotlights .card p {
+  margin: 0.5rem 0;
+}
+
+.business-spotlights .card a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+/* Responsive Design for Larger Screens */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row; /* Switch to row layout on larger screens */
+    text-align: left;
+  }
+
+  .hero-content {
+    flex-direction: row; /* Align content side by side */
+    align-items: center;
+  }
+
+  .hero-text {
+    flex: 1;
+    text-align: left;
+  }
+
+  .hero-image-container {
+    flex: 0 0 40%; /* Image takes up 40% of width */
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* For small screens */
+@media (max-width: 600px) {
+  main {
+    padding: 1rem; /* Reduce padding on smaller screens */
+  }
+
+  .business-spotlights {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    right: 1rem;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  header nav.active {
+    display: flex;
+  }
+
+  header .menu-icon {
+    display: block;
+  }
+}
