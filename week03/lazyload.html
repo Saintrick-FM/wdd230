@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lazy Loading Example</title>
+    <link rel="stylesheet" href="styles/lazyload.css" />
+    <meta name="author" content="Francy Saintrick Malonga" />
+    <meta
+      name="description"
+      content="demonstration of how to handle lazy loading images."
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Lazy Loading Images</h1>
+    </header>
+    <main>
+      <picture>
+        <img
+          src="placeholder.jpg"
+          data-src="https://via.placeholder.com/400x600/FF5733/FFFFFF?text=Image+1"
+          alt="Image 1"
+          loading="lazy"
+          class="lazy"
+        />
+      </picture>
+      <picture>
+        <img
+          src="placeholder.jpg"
+          data-src="https://via.placeholder.com/400x600/33FF57/FFFFFF?text=Image+2"
+          alt="Image 2"
+          loading="lazy"
+          class="lazy"
+        />
+      </picture>
+      <picture>
+        <img
+          src="placeholder.jpg"
+          data-src="https://via.placeholder.com/400x600/3357FF/FFFFFF?text=Image+3"
+          alt="Image 3"
+          loading="lazy"
+          class="lazy"
+        />
+      </picture>
+      <picture>
+        <img
+          src="placeholder.jpg"
+          data-src="https://via.placeholder.com/400x600/FF33A1/FFFFFF?text=Image+4"
+          alt="Image 4"
+          loading="lazy"
+          class="lazy"
+        />
+      </picture>
+      <picture>
+        <img
+          src="placeholder.jpg"
+          data-src="https://via.placeholder.com/400x600/A1FF33/FFFFFF?text=Image+5"
+          alt="Image 5"
+          loading="lazy"
+          class="lazy"
+        />
+      </picture>
+      <picture>
+        <img
+          src="placeholder.jpg"
+          data-src="https://via.placeholder.com/400x600/33A1FF/FFFFFF?text=Image+6"
+          alt="Image 6"
+          loading="lazy"
+          class="lazy"
+        />
+      </picture>
+    </main>
+    <footer>
+      <p>
+        Francy Saintrick Malonga | BYU-IDAHO | WDD | Last modified:
+        <span id="lastModified"></span>
+      </p>
+    </footer>
+    <script src="scripts/lazyload.js"></script>
+  </body>
+</html>
