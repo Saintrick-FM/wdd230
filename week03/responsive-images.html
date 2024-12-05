@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="author" content="Francy Saintrick Malonga">
+    <meta name="description" content="Responsive images demonstration page showing a beautiful landscape that adapts to different screen sizes">
+    <title>Responsive Images</title>
+    <link rel="stylesheet" href="styles/responsive-images.css">
 </head>
 <body>
-    
+    <main>
+        <div class="hero">
+            <picture>
+                <source media="(max-width: 500px)" srcset="images/landscape-small.webp">
+                <source media="(max-width: 1000px)" srcset="images/landscape-medium.webp">
+                <img src="images/landscape.webp" alt="A beautiful mountain landscape with snow-capped peaks and a serene lake" width="1500" height="750">
+            </picture>
+        </div>
+    </main>
 </body>
 </html>
