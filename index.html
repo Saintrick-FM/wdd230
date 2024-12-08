@@ -64,7 +64,11 @@ Course portal home page build"
       />
       <div class="name">Francy Malonga</div>
 
-      <button class="burger-menu" name="burger-menu">
+      <button 
+        class="burger-menu" 
+        name="burger-menu"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false">
         <span class="line first"></span>
         <span class="line second"></span>
         <span class="line third"></span>
@@ -170,7 +174,7 @@ Course portal home page build"
           <div class="card-content">
             <p>Brazzaville, Republic of Congo</p>
             <p>😍 31°C, Mostly sunny</p>
-            <p>Number of Visits: 100.000</p>
+            <p>Page Visits: <span id="visitCount">0</span></p>
           </div>
         </section>
       </div>
@@ -199,5 +203,6 @@ Course portal home page build"
     </footer>
 
     <script src="scripts/getDates.js"></script>
+    <script src="scripts/visitCounter.js"></script>
   </body>
 </html>
