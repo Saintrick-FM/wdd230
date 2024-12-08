@@ -1,14 +1,39 @@
-// Get the visit count element
-const visitDisplay = document.getElementById("visitCount");
+// Initialize visit counter when DOM is loaded
+document.addEventListener("DOMContentLoaded", initializeVisitCounter);
 
-// Get the stored visit count from localStorage or initialize to 0
-let numVisits = Number(localStorage.getItem("numVisits")) || 0;
+function initializeVisitCounter() {
+    try {
+        const visitDisplay = document.getElementById("visitCount");
+        if (!visitDisplay) return;
 
-// Increment the visit count
-numVisits++;
+        const numVisits = getVisitCount();
+        updateVisitCount(numVisits + 1);
+        updateDisplay(visitDisplay, numVisits + 1);
+    } catch (error) {
+        // Silently handle errors in production
+    }
+}
 
-// Display the visit count
-visitDisplay.textContent = numVisits.toLocaleString();
+function getVisitCount() {
+    try {
+        return Number(localStorage.getItem("numVisits")) || 0;
+    } catch (error) {
+        return 0;
+    }
+}
 
-// Store the new visit count
-localStorage.setItem("numVisits", numVisits);
+function updateVisitCount(count) {
+    try {
+        localStorage.setItem("numVisits", count);
+    } catch (error) {
+        // Silently handle errors in production
+    }
+}
+
+function updateDisplay(element, count) {
+    try {
+        element.textContent = count.toLocaleString();
+    } catch (error) {
+        // Silently handle errors in production
+    }
+}

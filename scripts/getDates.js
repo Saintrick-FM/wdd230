@@ -1,49 +1,98 @@
-// Dynamically update copyright year
-let year = document.getElementById("year");
-year.textContent = new Date().getFullYear();
+// Main initialization function
+document.addEventListener("DOMContentLoaded", () => {
+    // Initialize date elements
+    initializeDateElements();
+    
+    // Initialize navigation
+    initializeNavigation();
+    
+    // Initialize theme
+    initializeTheme();
+});
 
-// Get last modified date of the document
-document.getElementById("lastModified").textContent =
-  "Last modification: " + document.lastModified;
+function initializeDateElements() {
+    try {
+        const year = document.getElementById("year");
+        if (year) {
+            year.textContent = new Date().getFullYear();
+        }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const burgerMenu = document.querySelector(".burger-menu");
-    const navBoxes = document.querySelector(".nav-boxes");
-    const box1 = document.querySelector(".box1");
-    const box2 = document.querySelector(".box2");
-    const box3 = document.querySelector(".box3");
-    const box4 = document.querySelector(".box4");
-    const mainTitle = document.querySelector("h1");
-  
-    burgerMenu.addEventListener("click", () => {
-      navBoxes.classList.toggle("close");
-      burgerMenu.classList.toggle("open");
-      box1.classList.toggle("close");
-      box2.classList.toggle("close");
-      box3.classList.toggle("close");
-      box4.classList.toggle("close");
-      mainTitle.classList.toggle("go-up");
-      
-    });
-  });
-  
-  document.addEventListener('DOMContentLoaded', () => {
-  
-    const toggleTheme = document.getElementById('checkbox');
-  
-    toggleTheme.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme); // Save preference
-    });
-  
-    // Load saved theme on page load
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  });
- 
-  const checkbox = document.getElementById("checkbox")
-checkbox.addEventListener("change", () => {
-  document.body.classList.toggle("dark")
-})
+        const lastModified = document.getElementById("lastModified");
+        if (lastModified) {
+            lastModified.textContent = "Last modification: " + document.lastModified;
+        }
+    } catch (error) {
+        // Silently handle errors in production
+    }
+}
+
+function initializeNavigation() {
+    try {
+        const burgerMenu = document.querySelector(".burger-menu");
+        const navBoxes = document.querySelector(".nav-boxes");
+        const boxes = document.querySelectorAll(".box1, .box2, .box3, .box4");
+        const mainTitle = document.querySelector("h1");
+
+        if (burgerMenu && navBoxes) {
+            burgerMenu.addEventListener("click", () => {
+                navBoxes.classList.toggle("close");
+                burgerMenu.classList.toggle("open");
+                boxes.forEach(box => box.classList.toggle("close"));
+                if (mainTitle) {
+                    mainTitle.classList.toggle("go-up");
+                }
+                
+                // Update ARIA attributes
+                const isExpanded = burgerMenu.classList.contains("open");
+                burgerMenu.setAttribute("aria-expanded", isExpanded.toString());
+            });
+        }
+    } catch (error) {
+        // Silently handle errors in production
+    }
+}
+
+function initializeTheme() {
+    try {
+        const toggleTheme = document.getElementById('checkbox');
+        if (!toggleTheme) return;
+
+        // Load saved theme
+        const savedTheme = getSavedTheme();
+        applyTheme(savedTheme);
+        
+        // Set initial checkbox state
+        toggleTheme.checked = savedTheme === 'dark';
+
+        // Add event listener for theme toggle
+        toggleTheme.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            applyTheme(newTheme);
+            saveTheme(newTheme);
+        });
+    } catch (error) {
+        // Silently handle errors in production
+    }
+}
+
+function getSavedTheme() {
+    try {
+        return localStorage.getItem('theme') || 'light';
+    } catch (error) {
+        return 'light';
+    }
+}
+
+function saveTheme(theme) {
+    try {
+        localStorage.setItem('theme', theme);
+    } catch (error) {
+        // Silently handle errors in production
+    }
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    document.body.classList.toggle('dark', theme === 'dark');
+}

@@ -25,35 +25,38 @@ header {
   --main-bg: #ffffff; /* Card background */
   --nav-bg: #000000; /* Navigation background */
   --main-title: #000000;
-  --nav-hover: grey; /* Navigation hover */
-  --nav-active: #643219; /* Active navigation item */
+  --nav-hover: #666666; /* Navigation hover */
+  --nav-active: #8B4513; /* Active navigation item */
   --footer-bg: #1c4d72; /* Footer background */
   --footer-text: #ffffff;
-  --last-modified-color: #ccf91d; /* Last modified text */
+  --last-modified-color: #ffffff; /* Last modified text */
   --burger-line-color: white; /* Burger menu lines */
   --border-color: #1c2d5d; /* Border color */
+  --focus-outline: #4A90E2;
   --box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 :root[data-theme="dark"] {
-  --primary-color: #1c4d72; /* Primary color */
-  --secondary-color: #1c2d5d; /* Secondary color */
-  --card-head: #f9f9f9; /* Card head */
-  --card-content: #f9f9f9; /* Card head */
-  --main-title: #f9f9f9;
+  --primary-color: #90CAF9; /* Softer blue color */
+  --card-head: #ffffff; /* Card head */
+  --card-content: #ffffff; /* Card head */
+  --main-title: #ffffff;
   --background-color: #f9f9f9; /* Light mode background */
-  --text-color: #333333; /* Light mode text */
-  --main-bg: #434242; /* Card background */
+  --text-color: #ffffff; /* Light mode text */
+  --main-bg: #2C2C2C; /* Card background */
   --nav-bg: #000000; /* Navigation background */
-  --nav-hover: grey; /* Navigation hover */
-  --nav-active: #643219; /* Active navigation item */
+  --nav-hover: #808080; /* Navigation hover */
+  --nav-active: #CD853F; /* Active navigation item */
   --footer-bg: #1c4d72; /* Footer background */
-  --footer-text: #f9f9f9;
-  --last-modified-color: #ccf91d; /* Last modified text */
+  --footer-text: #ffffff;
+  --last-modified-color: #ffffff; /* Last modified text */
   --burger-line-color: white; /* Burger menu lines */
   --border-color: #1c2d5d; /* Border color */
+  --focus-outline: #90CAF9;
+  --link-color: #B3E5FC; /* Light blue for links */
+  --link-hover: #81D4FA; /* Slightly darker for hover */
   --box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -215,35 +218,95 @@ main h1 {
 }
 
 li {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .line-separation {
   height: 100%;
 }
 .activity {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  width: 100%;
+  text-decoration: none;
 }
-.activity-link {
-  padding-right: 5px;
+
+.activity span {
+  margin-bottom: 8px;
 }
-ul {
+
+.links {
   display: flex;
-  gap: 5px;
-  list-style: none; /* Removes bullets */
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .link {
-  border-right: 1.5px solid black;
+  position: relative;
+  border-right: none;
+  border-bottom: 2px solid var(--link-color);
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+}
 
-  padding: 0 5px;
-}
 .link:last-child {
-  border-right: none !important;
+  border-bottom: 2px solid var(--link-color);
 }
+
+.activity-link {
+  color: var(--primary-color);
+  text-decoration: none ;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.activity-link:hover {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.activity-link:active {
+  transform: translateY(0);
+}
+
+@media screen and (min-width: 500px) {
+  .activity {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .activity span {
+    min-width: 80px;
+    margin-bottom: 0;
+  }
+
+  .links {
+    width: auto;
+  }
+
+  .link {
+    border-bottom: none;
+    border-right: 1.5px solid var(--link-color);
+    padding: 0 10px;
+    margin-bottom: 0;
+  }
+
+  .link:last-child {
+    border-right: none;
+    border-bottom: none;
+  }
+}
+
 footer {
   /* background: var(--primary-color);
     color: white; */
@@ -343,4 +406,96 @@ footer {
 
 .burger-menu.open .line:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Add focus styles for better keyboard navigation */
+a:focus,
+button:focus,
+input:focus {
+  outline: 3px solid var(--focus-outline);
+  outline-offset: 2px;
+}
+
+/* Skip any outline on mouse click, but keep for keyboard */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Ensure sufficient color contrast in dark mode */
+[data-theme="dark"] .card-content {
+  color: var(--text-color);
+  background-color: var(--main-bg);
+}
+
+/* Improve link styling in dark mode */
+[data-theme="dark"] a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] a:hover {
+  color: var(--main-bg);
+  background-color: var(--link-color);
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] a:active {
+  transform: translateY(0);
+}
+
+/* Specific styles for activity links in dark mode */
+[data-theme="dark"] .activity-link,
+[data-theme="dark"] .learning-activities a {
+  color: var(--link-color);
+  transition: all 0.3s ease;
+  text-decoration: none !important;
+}
+
+[data-theme="dark"] .activity-link:hover,
+[data-theme="dark"] .learning-activities a:hover {
+  color: var(--main-bg);
+  background-color: var(--link-color);
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .activity-link:active,
+[data-theme="dark"] .learning-activities a:active {
+  transform: translateY(0);
+}
+
+/* Update link divider color in dark mode for all screen sizes */
+[data-theme="dark"] .link {
+  border-right-color: var(--link-color);
+}
+
+[data-theme="dark"] .link:last-child {
+  border-right: none;
+}
+
+/* Media query adjustments for small screens */
+@media screen and (max-width: 640px) {
+  .learning-activities a {
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  [data-theme="dark"] .learning-activities a {
+    color: var(--link-color);
+    text-decoration: none;
+    border-bottom: none;
+  }
+  
+  [data-theme="dark"] .learning-activities a:hover {
+    background-color: var(--link-color);
+    color: var(--main-bg);
+  }
+
+  .learning-activities li {
+    border-bottom: 1px solid var(--link-color);
+  }
+
+  [data-theme="dark"] .learning-activities li {
+    border-bottom: 1px solid var(--link-color);
+  }
 }
