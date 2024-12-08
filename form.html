@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form | Francy Malonga | WDD 230</title>
-    <meta name="description" content="WDD 230 - Web Frontend Development | Francy Malonga | Course Form Page">
-    <meta name="author" content="Francy Malonga">
+    <meta name="description" content="WDD 230 - Web Frontend Development | Francy Malonga | Course Form Page - A comprehensive form for user registration and feedback with enhanced accessibility and modern design features">
+    <meta name="author" content="Francy Saintrick Malonga">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
     <link rel="stylesheet" href="styles/form.css">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="images/favicon_io/favicon.ico">
 </head>
 <body>
     <header>
-        <img src="images/my-picture.jpg" width="50" height="50" alt="Profile Image">
+        <img src="images/my-picture.jpg" width="50" height="50" alt="Profile Image" loading="lazy">
         <div class="name">Francy Malonga</div>
         <div class="theme-burger-container">
             <button id="theme-toggle">
@@ -24,26 +24,32 @@
                     <span class="ball"></span>
                 </label>
             </button>
-            <button class="burger-menu" name="burger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span class="line first"></span>
-                <span class="line second"></span>
-                <span class="line third"></span>
+        </div>
+        <div >
+            <button class="burger-menu" 
+                    name="burger-menu" 
+                    aria-label="Toggle navigation menu" 
+                    aria-expanded="false"
+                    aria-controls="primary-navigation">
+                <span class="line first" aria-hidden="true"></span>
+                <span class="line second" aria-hidden="true"></span>
+                <span class="line third" aria-hidden="true"></span>
             </button>
         </div>
     </header>
 
-    <nav class="nav-boxes">
-        <div class="box1">
-            <a href="index.html">Home</a>
+    <nav class="nav-boxes" id="primary-navigation" aria-label="Primary navigation">
+        <div  class="box1">
+            <a href="index.html" aria-label="Home page">Home</a>
         </div>
         <div class="box2">
-            <a href="week01/chamber-site-plan.html">Chamber</a>
+            <a href="chamber/index.html" aria-label="Chamber page">Chamber</a>
         </div>
         <div class="box3">
-            <a href="#">Site Plan</a>
+            <a href="week01/chamber-site-plan.html" aria-label="Site Plan page">Site Plan</a>
         </div>
         <div class="box4 active">
-            <a href="form.html">Form</a>
+            <a href="form.html" aria-label="Form page" aria-current="page">Form</a>
         </div>
     </nav>
 
@@ -69,9 +75,21 @@
 
                 <fieldset>
                     <legend>Page Rating</legend>
-                    <label for="rating">Rate this page (1-10):
-                        <input type="range" id="rating" name="rating" min="1" max="10" step="1" value="5">
-                        <span id="currentRating">5</span>
+                    <label for="r">Rate this page (1-10):
+                        <input type="range" id="r" name="r" min="1" max="10" value="5" step="1" list="rangevalues">
+                        <span id="currentRating">5</span>/10
+                        <datalist id="rangevalues">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </datalist>
                     </label>
                 </fieldset>
 
@@ -88,5 +106,14 @@
     </footer>
 
     <script src="scripts/getDates.js"></script>
+    <script>
+        // Dynamic rating display
+        const ratingInput = document.getElementById('r');
+        const ratingDisplay = document.getElementById('currentRating');
+        
+        ratingInput.addEventListener('input', function() {
+            ratingDisplay.textContent = this.value;
+        });
+    </script>
 </body>
 </html>

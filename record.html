@@ -47,11 +47,10 @@
     </nav>
 
     <main>
-        <div class="confirmation-container">
+        <div class="record-container">
             <h1>Registration Successful!</h1>
-            <p>Thank you for registering. Your information has been received.</p>
-            <div id="form-results"></div>
-            <a href="form.html" class="back-button">Back to Form</a>
+            <div id="formData"></div>
+            <a href="form.html" class="back-button-record" id="back-button-record">Back to Form</a>
         </div>
     </main>
 
@@ -64,21 +63,27 @@
     <script src="scripts/burger.js"></script>
     <script src="scripts/darkMode.js"></script>
     <script>
-        // Display form data from URL parameters
-        window.onload = function() {
-            const params = new URLSearchParams(window.location.search);
-            const results = document.getElementById('form-results');
-            let html = '<h2>Submitted Information:</h2><ul>';
-            
-            params.forEach((value, key) => {
-                if (key !== 'password' && key !== 'password2') { // Don't display passwords
-                    html += `<li><strong>${key}:</strong> ${value}</li>`;
-                }
-            });
-            
-            html += '</ul>';
-            results.innerHTML = html;
-        };
+        function onload() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const formData = document.getElementById('formData');
+            let html = '';
+
+            // Display form data
+            if (urlParams.has('username')) {
+                html += `<p><strong>Username:</strong> ${urlParams.get('username')}</p>`;
+            }
+            if (urlParams.has('email')) {
+                html += `<p><strong>Email:</strong> ${urlParams.get('email')}</p>`;
+            }
+            if (urlParams.has('r')) {
+                html += `<p><strong>Page Rating:</strong> ${urlParams.get('r')}/10</p>`;
+            }
+
+            formData.innerHTML = html;
+        }
+
+        // Run onload when the page loads
+        window.addEventListener('load', onload);
     </script>
 </body>
 </html>

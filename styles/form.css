@@ -1,4 +1,3 @@
-/* General body styles */
 body {
     font-style: normal;
     display: grid;
@@ -24,6 +23,7 @@ header {
     justify-content: start;
     align-items: center;
     height: auto;
+    position: relative;
 }
 
 header img {
@@ -76,7 +76,10 @@ nav div:hover {
 
 a:not(.activity-link) {
     text-decoration: none;
-    color: white;
+   
+}
+#back-button-record {
+    color: var(--text-color);
 }
 
 .box1,
@@ -97,16 +100,105 @@ a:not(.activity-link) {
 .theme-burger-container {
     position: absolute;
     right: 20px;
-    top: 45px;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 10;
-    background: #000000;
-    padding: 3px 8px 25px 8px;
-    border-radius: 15px;
+    background: transparent;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 8px;
 }
+
+/* Theme Toggle */
+#theme-toggle {
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    background: transparent;
+    padding: 0;
+}
+
+/* Burger Menu Container */
+.burger-menu-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000000;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Burger Menu */
+.burger-menu {
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+#primary-navigation{
+color: white !important;
+}
+
+@media screen and (max-width: 767px) {
+    .burger-menu-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .burger-menu-container,
+    .burger-menu {
+        display: none;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background-color: var(--nav-bg);
+        gap: 0;
+        width: 100%;
+    }
+
+    .box1, .box2, .box3, .box4 {
+        display: flex;
+    }
+
+    body {
+        max-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0;
+    }
+
+    header img {
+        margin-right: 50px;
+    }
+
+    div.name {
+        font-size: 2.5rem;
+    }
+
+    main {
+        margin-top: 0px;
+    }
+}
+
+
 
 /* Theme Toggle */
 #theme-toggle {
@@ -161,7 +253,7 @@ a:not(.activity-link) {
 
 /* Burger Menu */
 .burger-menu {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 25px;
@@ -171,22 +263,17 @@ a:not(.activity-link) {
     cursor: pointer;
     padding: 0;
 }
+@media screen and (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+}
 
 .line {
     width: 100%;
     height: 2px;
     background-color: var(--burger-line-color);
     transition: transform 0.3s ease-in-out;
-}
-
-@media screen and (min-width: 768px) {
-    .theme-burger-container {
-        padding: 3px 8px;
-    }
-    
-    .burger-menu {
-        display: none;
-    }
 }
 
 /* Form Styles */
@@ -410,6 +497,93 @@ input[type="range"]::-moz-range-thumb:hover {
     background-color: var(--nav-hover);
 }
 
+/* Record Page Styles */
+.record-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--form-bg);
+    border-radius: var(--form-border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--form-bg);
+    color: var(--text-color);
+}
+
+.record-container h1 {
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.record-container #formData {
+    color: var(--text-color);
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.record-container strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Back button styles */
+.back-button-record {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--form-border-radius);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-weight: 600;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.back-button-record::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--accent-color);
+    z-index: -1;
+    opacity: 1;
+    border-radius: var(--form-border-radius);
+    transition: opacity 0.3s ease;
+}
+
+.back-button-record:hover::before {
+    opacity: 0.8;
+}
+
+.back-button-record:hover {
+    background-color: transparent;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .back-button-record {
+    background-color: var(--dark-accent);
+    color: white;
+    border-color: transparent;
+}
+
+[data-theme="dark"] .back-button-record::before {
+    background-color: var(--dark-accent);
+}
+
+[data-theme="dark"] .back-button-record:hover {
+    background-color: transparent;
+    border-color: var(--dark-accent);
+    color: white;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 640px) {
     .form-main {
@@ -423,48 +597,6 @@ input[type="range"]::-moz-range-thumb:hover {
 
     input {
         width: calc(100% - 1rem);
-    }
-}
-
-@media screen and (min-width: 768px) {
-    body {
-        max-height: 100vh;
-        overflow-x: hidden;
-    }
-
-    header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 15px 0;
-    }
-
-    header img {
-        margin-right: 50px;
-    }
-
-    div.name {
-        font-size: 2.5rem;
-    }
-
-    nav {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        background-color: var(--nav-bg);
-        gap: 0;
-        width: 100%;
-    }
-
-    .box1, .box2, .box3, .box4 {
-        display: flex;
-    }
-
-    .burger-menu {
-        display: none;
-    }
-
-    main {
-        margin-top: 0px;
     }
 }
 
