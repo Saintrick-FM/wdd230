@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Chamber of Commerce</title>
+    <link rel="icon" href="../images/favicon_io/favicon.ico">
+    <!-- Social media -->
+    <meta property="og:url" content="https://saintrick-fm.github.io/wdd230/chamber/thankyou.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Francy Malonga - WDD 230 - Chamber of Commerce Thank You">
+    <meta property="og:description" content="Thank you page for Chamber of Commerce Membership Application">
+    <meta property="og:image" content="https://github.com/Saintrick-FM/wdd230/blob/main/images/my-picture.jpg?raw=true">
+
+    <meta name="twitter:title" content="Francy Malonga - WDD 230 - Chamber of Commerce Thank You">
+    <meta name="twitter:description" content="Thank you page for Chamber of Commerce Membership Application">
+    <meta name="twitter:image" content="https://github.com/Saintrick-FM/wdd230/blob/main/images/my-picture.jpg?raw=true">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- End Social media -->
+
+    <meta name="description" content="Thank you page for Chamber of Commerce Membership Application by Francy Saintrick Malonga">
+    <meta name="author" content="Francy Saintrick Malonga">
+    
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/larger.css">
+    <link rel="stylesheet" href="../styles/theme-toggle.css">
+    <link rel="stylesheet" href="../styles/form.css">
+</head>
+<body>
+    <header>
+        <img src="../images/my-picture.jpg" width="50" height="50" alt="Profile Image" loading="lazy">
+        <div class="name">Francy Malonga</div>
+        <div class="theme-burger-container">
+            <div id="theme-toggle">
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="checkbox-label">
+                    <span>🌙</span>
+                    <span class="moon">☀️</span>
+                    <span class="ball"></span>
+                </label>
+            </div>
+        </div>
+        <button class="burger-menu">
+            <span class="line first"></span>
+            <span class="line second"></span>
+            <span class="line third"></span>
+        </button>
+    </header>
+
+    <nav class="nav-boxes" id="primary-navigation" aria-label="Primary navigation">
+        <div class="box1">
+            <a href="../index.html" aria-label="Home page">Home</a>
+        </div>
+        <div class="box2">
+            <a href="index.html" aria-label="Chamber page">Chamber</a>
+        </div>
+        <div class="box3">
+            <a href="../week01/chamber-site-plan.html" aria-label="Site Plan page">Site Plan</a>
+        </div>
+        <div class="box4">
+            <a href="../form.html" aria-label="Form page">Form</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="thank-you-container join-thank-you-container">
+            <h1>Thank You!</h1>
+            <p>Your membership application has been successfully submitted.</p>
+            <p>We appreciate your interest in joining our Chamber of Commerce.</p>
+            <p>Our team will review your application and contact you soon.</p>
+            <a href="index.html" class="back-to-home join-back-to-home">Return to Chamber Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | Francy Malonga | WDD 230 Project</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script src="../scripts/getDates.js"></script>
+    <script src="../scripts/burger.js"></script>
+    <script src="../scripts/darkMode.js"></script>
+    <script>
+       
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

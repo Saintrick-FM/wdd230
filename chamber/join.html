@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber of Commerce - Membership Application</title>
+    <link rel="icon" href="../images/favicon_io/favicon.ico">
+    <!-- Social media -->
+    <meta property="og:url" content="https://saintrick-fm.github.io/wdd230/chamber/join.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Francy Malonga - WDD 230 - Chamber of Commerce Membership">
+    <meta property="og:description" content="Membership application for the Chamber of Commerce">
+    <meta property="og:image" content="https://github.com/Saintrick-FM/wdd230/blob/main/images/my-picture.jpg?raw=true">
+
+    <meta name="twitter:title" content="Francy Malonga - WDD 230 - Chamber of Commerce Membership">
+    <meta name="twitter:description" content="Membership application for the Chamber of Commerce">
+    <meta name="twitter:image" content="https://github.com/Saintrick-FM/wdd230/blob/main/images/my-picture.jpg?raw=true">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- End Social media -->
+
+    <meta name="description" content="Chamber of Commerce Membership Application by Francy Saintrick Malonga">
+    <meta name="author" content="Francy Saintrick Malonga">
+    
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/base.css">
+    <link rel="stylesheet" href="../styles/larger.css">
+    <link rel="stylesheet" href="../styles/theme-toggle.css">
+    <link rel="stylesheet" href="../styles/form.css">
+</head>
+<body>
+    <header>
+        <img src="../images/my-picture.jpg" width="50" height="50" alt="Profile Image" loading="lazy">
+        <div class="name">Francy Malonga</div>
+        <div class="theme-burger-container">
+            <div id="theme-toggle">
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="checkbox-label">
+                    <span>🌙</span>
+                    <span class="moon">☀️</span>
+                    <span class="ball"></span>
+                </label>
+            </div>
+        </div>
+        <button class="burger-menu">
+            <span class="line first"></span>
+            <span class="line second"></span>
+            <span class="line third"></span>
+        </button>
+    </header>
+
+    <nav class="nav-boxes" id="primary-navigation" aria-label="Primary navigation">
+        <div class="box1">
+            <a href="../index.html" aria-label="Home page">Home</a>
+        </div>
+        <div class="box2">
+            <a href="index.html" aria-label="Chamber page">Chamber</a>
+        </div>
+        <div class="box3">
+            <a href="../week01/chamber-site-plan.html" aria-label="Site Plan page">Site Plan</a>
+        </div>
+        <div class="box4">
+            <a href="../form.html" aria-label="Form page">Form</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="form-container join-form-container">
+            <form method="get" action="thankyou.html" class="membership-form join-membership-form">
+                <div class="form-grid join-form-grid">
+                    <div class="form-column join-form-column">
+                        <label for="firstName" class="join-form-label">First Name*
+                            <input type="text" id="firstName" name="firstName" class="join-form-input" required>
+                        </label>
+
+                        <label for="lastName" class="join-form-label">Last Name*
+                            <input type="text" id="lastName" name="lastName" class="join-form-input" required>
+                        </label>
+
+                        <label for="title" class="join-form-label">Business Position
+                            <input type="text" id="title" name="title" class="join-form-input" pattern="[A-Za-z\s-]{7,}" title="Position must be at least 7 characters long, using letters, spaces, and hyphens">
+                        </label>
+
+                        <label for="email" class="join-form-label">Email*
+                            <input type="email" id="email" name="email" class="join-form-input" required placeholder="user@example.com">
+                        </label>
+
+                        <label for="phone" class="join-form-label">Phone Number*
+                            <input type="tel" id="phone" name="phone" class="join-form-input" required>
+                        </label>
+
+                        <label for="businessName" class="join-form-label">Business Name*
+                            <input type="text" id="businessName" name="businessName" class="join-form-input" required>
+                        </label>
+
+                        <label for="membershipLevel" class="join-form-label">Membership Level*
+                            <select id="membershipLevel" name="membershipLevel" class="join-form-select" required>
+                                <option value="">Select Membership Level</option>
+                                <option value="np">NP Membership (Non-Profit)</option>
+                                <option value="bronze">Bronze Membership</option>
+                                <option value="silver">Silver Membership</option>
+                                <option value="gold">Gold Membership</option>
+                            </select>
+                        </label>
+
+                        <label for="description" class="join-form-label">Business Description
+                            <textarea id="description" name="description" class="join-form-textarea" rows="4"></textarea>
+                        </label>
+
+                        <input type="hidden" id="timestamp" name="timestamp">
+
+                        <input type="submit" value="Submit Membership Application" class="submit-btn join-submit-btn">
+                    </div>
+
+                    <div class="membership-benefits join-membership-benefits">
+                        <h2 class="join-benefits-title">Membership Benefits</h2>
+                        <div class="benefit-levels join-benefit-levels">
+                            <div class="np-level join-np-level">
+                                <h3>NP Membership</h3>
+                                <ul>
+                                    <li>Free for non-profit organizations</li>
+                                    <li>Basic directory listing</li>
+                                    <li>Community networking</li>
+                                </ul>
+                            </div>
+                            <div class="bronze-level join-bronze-level">
+                                <h3>Bronze Membership</h3>
+                                <ul>
+                                    <li>Directory listing</li>
+                                    <li>Basic event discounts</li>
+                                    <li>Limited advertising</li>
+                                </ul>
+                            </div>
+                            <div class="silver-level join-silver-level">
+                                <h3>Silver Membership</h3>
+                                <ul>
+                                    <li>Enhanced directory listing</li>
+                                    <li>Significant event discounts</li>
+                                    <li>Web page spotlight</li>
+                                    <li>Quarterly newsletter</li>
+                                </ul>
+                            </div>
+                            <div class="gold-level join-gold-level">
+                                <h3>Gold Membership</h3>
+                                <ul>
+                                    <li>Premium directory listing</li>
+                                    <li>Full event discounts</li>
+                                    <li>Homepage featured spotlight</li>
+                                    <li>Monthly newsletter</li>
+                                    <li>Priority networking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> | Francy Malonga | WDD 230 Project</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script src="../scripts/getDates.js"></script>
+    <script src="../scripts/burger.js"></script>
+    <script src="../scripts/darkMode.js"></script>
+    <script>
+        document.getElementById('timestamp').value = new Date().toISOString();
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
