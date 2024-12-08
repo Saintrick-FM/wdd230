@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Confirmation - WDD 230</title>
+    <link rel="icon" href="images/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/larger.css">
+</head>
+<body>
+    <header>
+        <img src="images/my-picture.jpg" width="50" height="50" alt="Profile Image">
+        <div class="name">Francy Malonga</div>
+        <div class="theme-burger-container">
+            <button id="theme-toggle">
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="checkbox-label">
+                    <span>🌙</span>
+                    <span class="moon">☀️</span>
+                    <span class="ball"></span>
+                </label>
+            </button>
+            <button class="burger-menu">
+                <span class="line first"></span>
+                <span class="line second"></span>
+                <span class="line third"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="nav-boxes">
+        <div class="box1">
+            <a href="index.html">Home</a>
+        </div>
+        <div class="box2">
+            <a href="week01/chamber-site-plan.html">Chamber</a>
+        </div>
+        <div class="box3">
+            <a href="#">Site Plan</a>
+        </div>
+        <div class="box4">
+            <a href="form.html">Form</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="confirmation-container">
+            <h1>Registration Successful!</h1>
+            <p>Thank you for registering. Your information has been received.</p>
+            <div id="form-results"></div>
+            <a href="form.html" class="back-button">Back to Form</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Francy Saintrick Malonga 👨‍🎓 Republic Of The Congo 🇨🇬</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script src="scripts/getDates.js"></script>
+    <script src="scripts/burger.js"></script>
+    <script src="scripts/darkMode.js"></script>
+    <script>
+        // Display form data from URL parameters
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const results = document.getElementById('form-results');
+            let html = '<h2>Submitted Information:</h2><ul>';
+            
+            params.forEach((value, key) => {
+                if (key !== 'password' && key !== 'password2') { // Don't display passwords
+                    html += `<li><strong>${key}:</strong> ${value}</li>`;
+                }
+            });
+            
+            html += '</ul>';
+            results.innerHTML = html;
+        };
+    </script>
+</body>
+</html>

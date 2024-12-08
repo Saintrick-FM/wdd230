@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form | Francy Malonga | WDD 230</title>
+    <meta name="description" content="WDD 230 - Web Frontend Development | Francy Malonga | Course Form Page">
+    <meta name="author" content="Francy Malonga">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <img src="images/my-picture.jpg" width="50" height="50" alt="Profile Image">
+        <div class="name">Francy Malonga</div>
+        <div class="theme-burger-container">
+            <button id="theme-toggle">
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="checkbox-label">
+                    <span>🌙</span>
+                    <span class="moon">☀️</span>
+                    <span class="ball"></span>
+                </label>
+            </button>
+            <button class="burger-menu" name="burger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="line first"></span>
+                <span class="line second"></span>
+                <span class="line third"></span>
+            </button>
+        </div>
+    </header>
+
+    <nav class="nav-boxes">
+        <div class="box1">
+            <a href="index.html">Home</a>
+        </div>
+        <div class="box2">
+            <a href="week01/chamber-site-plan.html">Chamber</a>
+        </div>
+        <div class="box3">
+            <a href="#">Site Plan</a>
+        </div>
+        <div class="box4 active">
+            <a href="form.html">Form</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="form-main">
+            <h1>Course Registration Form</h1>
+            <form method="get" action="record.html">
+                <fieldset>
+                    <legend>User Information</legend>
+                    <label for="username">Username:
+                        <input type="text" id="username" name="username" required pattern="[a-zA-Z0-9]{8,}" placeholder="At least 8 characters">
+                    </label>
+                    <label for="password">Password:
+                        <input type="password" id="password" name="password" required pattern="[a-zA-Z0-9]{8,}" placeholder="At least 8 characters">
+                    </label>
+                    <label for="password2">Confirm Password:
+                        <input type="password" id="password2" name="password2" required pattern="[a-zA-Z0-9]{8,}">
+                    </label>
+                    <label for="email">Email:
+                        <input type="email" id="email" name="email" required pattern=".+@byui\.edu$" placeholder="example@byui.edu">
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Page Rating</legend>
+                    <label for="rating">Rate this page (1-10):
+                        <input type="range" id="rating" name="rating" min="1" max="10" step="1" value="5">
+                        <span id="currentRating">5</span>
+                    </label>
+                </fieldset>
+
+                <input type="submit" value="Register" class="submitBtn">
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="currentYear"></span> | Francy Malonga | Republic of the Congo
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script src="scripts/getDates.js"></script>
+</body>
+</html>

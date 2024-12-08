@@ -157,6 +157,8 @@ a:not(.activity-link) {
   color: yellow;
   margin-right: 1px;
 }
+
+/* Main */
 main {
   background: var(--main-bg);
   height: 100%;
