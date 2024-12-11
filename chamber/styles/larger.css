@@ -242,6 +242,23 @@
   text-align: center;
 }
 
+.discover-main h1 {
+  grid-column: 1 / -1;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  padding: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+@media screen and (max-width: 768px) {
+  .discover-main h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .discover-main {
