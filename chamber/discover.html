@@ -69,130 +69,73 @@
       </button>
     </header>
 
-    <main>
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="hero-content">
-          <div class="hero-text">
-            <h1 class="main-title">Brazzaville Chamber of Commerce</h1>
-            <p>
-              Your hub for business networking, community growth, and economic
-              initiatives in Brazzaville.<br>
-              Our purpose is to provide local businesses with a platform to
-              connect, collaborate, and promote their services and to offer the
-              community organized resources for events, services, and
-              opportunities in Brazzaville.
-            </p>
-            <div class="hero-input">
-              <input
-                type="text"
-                placeholder="Search for businesses or events..."
-             >
-              <button>Search</button>
+    <main class="discover-main">
+        <aside class="sidebar">
+            <div class="visit-message" id="visitMessage"></div>
+            
+            <section class="demographics">
+                <h2>Demographics</h2>
+                <ul>
+                    <li>Population: ~1.8 million</li>
+                    <li>Major Industries: Oil, Agriculture, Services</li>
+                    <li>Languages: French, Lingala</li>
+                </ul>
+            </section>
+            
+            <section class="events">
+                <h2>Upcoming Events</h2>
+                <ul>
+                    <li>Business Networking Gala - December 15, 2024</li>
+                    <li>Small Business Workshop - January 10, 2025</li>
+                    <li>Community Market Day - January 25, 2025</li>
+                </ul>
+            </section>
+        </aside>
+
+        <div class="photo-gallery">
+            <div class="photo-card">
+                <img src="placeholder.jpg" data-src="images/discover1.jpg" alt="City Skyline" loading="lazy">
+                <div class="photo-info">
+                    <h3>City Skyline</h3>
+                    <p>The beautiful skyline of our growing city.</p>
+                </div>
             </div>
-          </div>
-          <div class="hero-image-container">
-            <img
-              class="hero-image"
-              src="images/hero.jpg"
-              alt="Hero Image"
-           >
-          </div>
+            <div class="photo-card">
+                <img src="placeholder.jpg" data-src="images/discover2.jpg" alt="Local Market" loading="lazy">
+                <div class="photo-info">
+                    <h3>Local Market</h3>
+                    <p>Experience our vibrant local marketplace.</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="placeholder.jpg" data-src="images/discover3.jpg" alt="Business District" loading="lazy">
+                <div class="photo-info">
+                    <h3>Business District</h3>
+                    <p>The heart of our commercial activities.</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="placeholder.jpg" data-src="images/discover4.jpg" alt="Cultural Center" loading="lazy">
+                <div class="photo-info">
+                    <h3>Cultural Center</h3>
+                    <p>Celebrating our rich cultural heritage.</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="placeholder.jpg" data-src="images/discover5.jpg" alt="Community Park" loading="lazy">
+                <div class="photo-info">
+                    <h3>Community Park</h3>
+                    <p>A peaceful retreat in the heart of the city.</p>
+                </div>
+            </div>
+            <div class="photo-card">
+                <img src="placeholder.jpg" data-src="images/discover6.jpg" alt="Innovation Hub" loading="lazy">
+                <div class="photo-info">
+                    <h3>Innovation Hub</h3>
+                    <p>Where technology meets creativity.</p>
+                </div>
+            </div>
         </div>
-      </section>
-
-      <!-- Business Spotlights Section -->
-      <section class="business-spotlights">
-        <h2 class="business-spotlights-title">Business Spotlights</h2>
-        <div class="card-container">
-          <div class="card">
-            <img
-              src="images/cafe.jpg"
-              alt="Sunrise Cafe"
-           >
-            <h3>Sunrise Café</h3>
-            <p>
-              A cozy spot in the heart of town serving fresh coffee and homemade
-              pastries daily.
-            </p>
-            <a href="#">Read more</a>
-          </div>
-          <div class="card">
-            <img
-              src="images/grocery.jpg"
-              alt="Green Leaf Market"
-           >
-            <h3>Green Leaf Market</h3>
-            <p>
-              A family-owned grocery store offering organic produce and
-              sustainable products.
-            </p>
-            <a href="#">Read more</a>
-          </div>
-          <div class="card">
-            <img
-              src="images/gym.jpg"
-              alt="Powerhouse Gym"
-           >
-
-            <h3>Powerhouse Gym</h3>
-            <p>
-              Helping locals reach their fitness goals with top-notch equipment
-              and personal trainers.
-            </p>
-            <a href="#">See classes</a>
-          </div>
-        </div>
-      </section>
-      <!-- Weather Section -->
-      <section class="weather">
-        <h2>Brazzaville Weather Update</h2>
-        <div class="divider"></div>
-        <div class="weather-container">
-          <div class="weather-icon">
-            <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png" alt="wheather icon">
-          
-          
-          </div>
-          <div class="weather-details">
-            <p class="temperature">20°C to 33°C</p>
-            <p class="description">
-              Warm and humid with occasional tropical rain showers.
-            </p>
-            <p class="location">Brazzaville, Congo</p>
-          </div>
-        </div>
-      </section>
-      <!-- Events Section -->
-      <section class="events">
-        <h2 class="events-title">Upcoming Events</h2>
-        <div class="divider"></div>
-        <div class="events-grid">
-          <div class="event-item">
-            <h3>Business Networking Gala</h3>
-            <p>
-              An evening of networking and collaboration for local entrepreneurs
-              and business leaders. Includes keynote speeches and opportunities
-              for partnerships.
-            </p>
-          </div>
-          <div class="event-item">
-            <h3>Small Business Workshop</h3>
-            <p>
-              A hands-on workshop providing tools and strategies to help small
-              businesses grow in Brazzaville. Topics include digital marketing
-              and financial management.
-            </p>
-          </div>
-          <div class="event-item">
-            <h3>Community Market Day</h3>
-            <p>
-              A vibrant market event showcasing local businesses, artisans, and
-              services, promoting community engagement and economic growth.
-            </p>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="footer">
@@ -245,12 +188,33 @@
           </svg>
      
       </div>
-      <p>
-        &copy;<span id="year"></span>🇨🇬 Brazzaville Chamber of Commerce - 👨‍🎓 Francy Saintrick Malonga
-      </p>
-      <p>All rights reserved</p>
-      <p id="lastModified"></p>
+        <p>&copy; <span id="currentyear"></span> | Francy Malonga | WDD 230 Project</p>
+        <p id="lastModified"></p>
     </footer>
+
     <script src="scripts/index.js"></script>
+    <script src="../scripts/getDates.js"></script>
+    <script src="../scripts/burger.js"></script>
+    <script src="../scripts/darkMode.js"></script>
+    <script>
+        // Set last visit message
+        const lastVisit = localStorage.getItem('lastVisit');
+        const now = Date.now();
+        localStorage.setItem('lastVisit', now);
+
+        if (!lastVisit) {
+            document.getElementById('visitMessage').textContent = 'Welcome! Let us know if you have any questions.';
+        } else {
+            const daysSinceLastVisit = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
+            if (daysSinceLastVisit < 1) {
+                document.getElementById('visitMessage').textContent = 'Back so soon! Awesome!';
+            } else {
+                document.getElementById('visitMessage').textContent = `You last visited ${daysSinceLastVisit} day${daysSinceLastVisit > 1 ? 's' : ''} ago.`;
+            }
+        }
+
+        // Set current year
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
