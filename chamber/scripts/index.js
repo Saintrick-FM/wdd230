@@ -9,12 +9,10 @@ document.getElementById("lastModified").textContent =
 document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector("nav");
   const burgerMenu = document.querySelector(".burger-menu");
-console.log("test nav = ",nav);
-
+  
   burgerMenu.addEventListener("click", () => {
     nav.classList.toggle("close");
     burgerMenu.classList.toggle("open");
-console.log("test nav.classList = ",nav.classList);
 
     if (nav.classList.contains("close")) {
       nav.style.display = "flex";

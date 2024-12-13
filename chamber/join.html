@@ -12,6 +12,7 @@
      <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
     <link rel="icon" href="../images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <!-- Social media -->
     <meta property="og:url" content="https://saintrick-fm.github.io/wdd230/chamber/join.html">
     <meta property="og:type" content="website">
@@ -58,7 +59,15 @@
    >
     <meta name="twitter:card" content="summary_large_image">
     <!-- End Social media -->
-    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://github.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline';">
+    <style>
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+    </style>
   </head>
   <body>
     <header class="header">
@@ -73,7 +82,7 @@
         <a class="link" href="./discover.html">Events</a>
         <a class="link join-us" href="join.html">Join Us</a>
       </nav>
-      <button class="burger-menu" name="burger-menu">
+      <button class="burger-menu" name="burger-menu" aria-label="Toggle navigation menu">
         <span class="line first"></span>
         <span class="line second"></span>
         <span class="line third"></span>
@@ -82,7 +91,7 @@
 
     <main>
         <div class="form-container join-form-container">
-            <form method="get" action="thankyou.html" class="membership-form join-membership-form">
+            <form method="get" action="./thankyou.html" class="membership-form join-membership-form" autocomplete="on">
                 <div class="form-grid join-form-grid">
                     <div class="form-column join-form-column">
                         <label for="firstName" class="join-form-label">First Name*
@@ -93,8 +102,9 @@
                             <input type="text" id="lastName" name="lastName" class="join-form-input" required>
                         </label>
 
-                        <label for="title" class="join-form-label">Business Position
-                            <input type="text" id="title" name="title" class="join-form-input" pattern="[A-Za-z\s-]{7,}" title="Position must be at least 7 characters long, using letters, spaces, and hyphens">
+                        <label for="title" class="join-form-label">Business Position*
+                            <input type="text" id="title" name="title" class="join-form-input" pattern="[A-Za-z\s-]{7,}" required title="Position must be at least 7 characters long, using letters, spaces, and hyphens">
+                            <span id="titleError" class="error-message">Position must be at least 7 characters long, using only letters, spaces, and hyphens</span>
                         </label>
 
                         <label for="email" class="join-form-label">Email*
@@ -102,7 +112,7 @@
                         </label>
 
                         <label for="phone" class="join-form-label">Phone Number*
-                            <input type="tel" id="phone" name="phone" class="join-form-input" required>
+                            <input type="tel" id="phone" name="phone" class="join-form-input" required  placeholder="123-456-7890">
                         </label>
 
                         <label for="businessName" class="join-form-label">Business Name*
@@ -125,7 +135,7 @@
 
                         <input type="hidden" id="timestamp" name="timestamp">
 
-                        <input type="submit" value="Submit Membership Application" class="submit-btn join-submit-btn">
+                        <button type="submit" class="submit-btn join-submit-btn" aria-label="Submit membership application">Submit Membership Application</button>
                     </div>
 
                     <div class="membership-benefits join-membership-benefits">
@@ -229,10 +239,27 @@
         <p>All rights reserved</p>
         <p id="lastModified"></p>
       </footer>
-      <script src="scripts/index.js"></script>
+      <script src="scripts/index.js" defer></script>
     <script>
         document.getElementById('timestamp').value = new Date().toISOString();
         document.getElementById('currentyear').textContent = new Date().getFullYear();
+    </script>
+    <script>
+        document.querySelector('.membership-form').addEventListener('submit', function(e) {
+            const titleInput = document.getElementById('title');
+            const titleError = document.getElementById('titleError');
+            const pattern = /^[A-Za-z\s-]{7,}$/;
+            
+            if (titleInput.value && !pattern.test(titleInput.value)) {
+                e.preventDefault();
+                titleError.style.display = 'block';
+            }
+        });
+
+        // Hide error message when user starts typing
+        document.getElementById('title').addEventListener('input', function() {
+            document.getElementById('titleError').style.display = 'none';
+        });
     </script>
 </body>
 </html>
