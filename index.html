@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon_io/favicon.ico">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon_io/favicon.ico" />
     <!-- Social media -->
-    <meta property="og:url" content="https://saintrick-fm.github.io/wdd230/">
-    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saintrick-fm.github.io/wdd230/" />
+    <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Francy Malonga - WDD 230 - Web Frontend Development Home page">
+      content="Francy Malonga - WDD 230 - Web Frontend Development Home page"
+    />
     <meta
       property="og:description"
       content="WDD 230 - Web Frontend Development 
     Francy Saintrick Malonga
-    Course portal home page build">
+    Course portal home page build"
+    />
     <meta
       property="og:image"
-      content="https://github.com/Saintrick-FM/wdd230/blob/main/images/my-picture.jpg?raw=true">
+      content="https://github.com/Saintrick-FM/wdd230/blob/main/images/my-picture.jpg?raw=true"
+    />
 
     <meta
       name="twitter:title"
-      content="Francy Malonga - WDD 230 - Web Frontend Development Home page">
+      content="Francy Malonga - WDD 230 - Web Frontend Development Home page"
+    />
     <meta
       name="twitter:description"
       content="WDD 230 - Web Frontend Development 
               Francy Saintrick Malonga
-              Course portal home page build">
+              Course portal home page build"
+    />
     <meta
       name="twitter:image"
-      content="https://github.com/Saintrick-FM/wdd230/blob/main/images/my-picture.jpg?raw=true">
-    <meta name="twitter:card" content="summary_large_image">
+      content="https://github.com/Saintrick-FM/wdd230/blob/main/images/my-picture.jpg?raw=true"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <!-- End Social media -->
 
     <title>Francy Malonga - WDD 230 - Web Frontend Development Home page</title>
@@ -40,36 +46,37 @@
     Francy Saintrick Malonga
     Course portal home page build
     "
-    >
-    <meta name="author" content="Francy Saintrick Malonga" >
-    <link rel="stylesheet" href="styles/normalize.css" >
-    <link rel="stylesheet" href="styles/base.css" >
-    <link rel="stylesheet" href="styles/larger.css" >
-    <link rel="stylesheet" href="styles/theme-toggle.css" >
+    />
+    <meta name="author" content="Francy Saintrick Malonga" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/larger.css" />
+    <link rel="stylesheet" href="styles/theme-toggle.css" />
   </head>
 
   <body>
-    <header >
+    <header>
       <img
         src="images/my-picture.jpg"
         width="50"
         height="50"
         alt="Profile Image"
-      >
+      />
       <div class="name">Francy Malonga</div>
 
-      <button 
-        class="burger-menu" 
+      <button
+        class="burger-menu"
         name="burger-menu"
         aria-label="Toggle navigation menu"
-        aria-expanded="false">
+        aria-expanded="false"
+      >
         <span class="line first"></span>
         <span class="line second"></span>
         <span class="line third"></span>
       </button>
       <div id="theme-toggle">
         <span>
-          <input type="checkbox" class="checkbox" id="checkbox" >
+          <input type="checkbox" class="checkbox" id="checkbox" />
           <label for="checkbox" class="checkbox-label">
             <span>🌙</span>
             <span class="moon">☀️</span>
@@ -86,7 +93,9 @@
       <div class="box2">
         <a href="chamber/index.html">Chamber</a>
       </div>
-      <div class="box3"><a href="week01/chamber-site-plan.html">Site Plan</a></div>
+      <div class="box3">
+        <a href="week01/chamber-site-plan.html">Site Plan</a>
+      </div>
       <div class="box4"><a href="form.html">Form</a></div>
     </nav>
 
@@ -96,17 +105,17 @@
           <source
             media="(max-width: 600px)"
             srcset="./week03/images/hero-small.webp"
-          >
+          />
           <source
             media="(max-width: 900px)"
             srcset="./week03/images/hero-medium.webp"
-          >
+          />
           <img
             src="./week03/images/hero-large.webp"
             alt="Abidjan Ivory Coast Temple"
             width="960"
             height="600"
-          >
+          />
         </picture>
         <div class="hero-overlay">Bountiful Utah Temple</div>
       </div>
@@ -116,8 +125,9 @@
           <div class="card-head">
             <h2>Learning Activities</h2>
           </div>
-          <div class="card-content">
-            <div class="activity">
+          <div class="card-content" id="activities">
+            <!-- This content should be dynamically generated using JavaScript. -->
+            <!-- <div class="activity">
               <span>Week 01 : </span>
               <ul class="links">
                 <li class="link">
@@ -169,7 +179,7 @@
             </div>
             <div class="activity">
               <span>Week 06 : </span>
-            </div>
+            </div>  -->
           </div>
         </section>
 
@@ -177,15 +187,10 @@
           <div class="card-head">
             <h2>Information</h2>
           </div>
-          <!-- <div class="weather-card">
-            <h2>Current Weather</h2>
-            <p id="temperature">Loading...</p>
-            <p id="weather-description">Loading...</p>
-            <img id="weather-icon" src="" alt="Weather Icon">
-            <p>Page Visits: <span id="visitCount">0</span></p>
-        </div> -->
+          
           <div class="card-content">
             <p>Brazzaville, Republic of Congo</p>
+            <img id="weather-icon" src="" alt="Weather Icon">
             <p id="temperature"></p>
             <p>Page Visits: <span id="visitCount">0</span></p>
           </div>
@@ -217,7 +222,7 @@
 
     <script src="scripts/getDates.js"></script>
     <script src="scripts/visitCounter.js"></script>
-    <!-- <script src="scripts/weather.js"></script> -->
-    <script src="scripts/links.js"></script>
+    <script type="module" src="scripts/weather.js"></script>
+    <script type="module" src="scripts/links.js"></script>
   </body>
 </html>

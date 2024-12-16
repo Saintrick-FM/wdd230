@@ -56,12 +56,8 @@
       "week": "Week 5",
       "links": [
         {
-          "url": "week05/quiz.html",
-          "title": "Quiz"
-        },
-        {
-          "url": "week05/quiz.js",
-          "title": "Quiz JavaScript"
+          "url": "week05/weather.html",
+          "title": "OpenWeatherMap.org Api Test"
         }
       ]
     }
