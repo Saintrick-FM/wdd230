@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.card-head {
+    border-bottom: 2px solid #007BFF;
+    margin-bottom: 10px;
+}
+
+.card-content {
+    text-align: center;
+}
+
+#weather-icon {
+    width: 100px;
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}

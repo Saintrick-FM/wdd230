@@ -1,26 +1,17 @@
-import { OPENWEATHER_API_KEY } from '../scripts/config.js'; // Import the API key from the config file
-const lat = '49.74999'; 
-const lon = '6.64316'; 
+import { OPENWEATHER_API_KEY } from '../../config.js'; // Import the API key from the config file
 
-const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${OPENWEATHER_API_KEY}`;
+const lat = '49.75'; // Latitude for Trier, Germany
+const lon = '6.64'; // Longitude for Trier, Germany
 
-const currentTemp = document.querySelector('#current-temp');
-const weatherIcon = document.querySelector('#weather-icon');
-const captionDesc = document.querySelector('figcaption');
+const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${OPENWEATHER_API_KEY}`;
 
-async function apiFetch() {
+async function fetchWeather() {
+  
     try {
         const response = await fetch(weatherUrl);
         if (response.ok) {
             const data = await response.json();
-            const temperature = data.main.temp;
-            const description = data.weather[0].description;
-            const icon = data.weather[0].icon;
-          
-            console.log("data test ! ", icon);
-            
-            document.getElementById('temperature').innerText = `😍 ${temperature} °C, ${description}`;
-            displayResults(data);
+            updateWeatherCard(data);
         } else {
             throw new Error(await response.text());
         }
@@ -29,4 +20,12 @@ async function apiFetch() {
     }
 }
 
-apiFetch();
+function updateWeatherCard(data) {
+    const temperature = data.main.temp;
+    const description = data.weather[0].description;
+    const icon = data.weather[0].icon;
+    document.getElementById('weather-icon').src = `http://openweathermap.org/img/w/${icon}.png`;
+    document.getElementById('current-temp').innerText = `😍 ${temperature} °C, ${description}`;
+}
+
+fetchWeather(); // Invoke the function to test it

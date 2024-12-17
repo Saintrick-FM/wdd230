@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <meta
       name="description"
@@ -11,21 +11,33 @@
     Week 05 OpenWeatherMap.org Api Test
     "
     />
+    <link rel="stylesheet" href="styles/weather.css" />
     <title>Week 05 - OpenWeatherMap.org Api Test</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>OpenWeatherMap.org Api Test</h1>
     <main>
-        <p>The current temperature in Trier, Germany is <span id="current-temp"></span></p>
-        <figure>
-            <img src="" alt="" id="weather-icon">
+      <section class="card">
+        <div class="card-head">
+          <h2>Information</h2>
+        </div>
+
+        <div class="card-content">
+          <p>The current temperature in Trier, Germany is</p>
+
+          <figure>
+            <img src="" alt="" id="weather-icon" />
             <figcaption></figcaption>
-        </figure>
+          </figure>
+       
+          <p id="current-temp"></p>
+        
+        </div>
+      </section>
     </main>
     <footer>
-        Francy Saintrick Malonga | OpenWeatherMap.org | CC BY-SA 4.0
-        
+      Francy Saintrick Malonga | OpenWeatherMap.org | CC BY-SA 4.0
     </footer>
-    <script src="./scripts/weather.js"></script>
-</body>
+    <script type="module" src="./scripts/weather.js"></script>
+  </body>
 </html>
