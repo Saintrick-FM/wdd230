@@ -22,7 +22,7 @@ async function displayMembers() {
             memberCard.classList.add('member-card');
             
             memberCard.innerHTML = `
-                <img src="images/${member.image}" alt="${member.name} logo">
+                
                 <div class="member-info">
                     <h3>${member.name}</h3>
                     <p>${member.address}</p>

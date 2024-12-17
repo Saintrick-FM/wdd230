@@ -1,65 +1,65 @@
 [
-    {
-        "name": "Company A",
-        "address": "123 Main St, City, Country",
-        "phone": "123-456-7890",
-        "website": "https://companya.com",
-        "image": "company-a.jpg",
-        "membership_level": "Gold",
-        "info": "Additional information about Company A."
-    },
-    {
-        "name": "Company B",
-        "address": "456 Elm St, City, Country",
-        "phone": "234-567-8901",
-        "website": "https://companyb.com",
-        "image": "company-b.jpg",
-        "membership_level": "Silver",
-        "info": "Additional information about Company B."
-    },
-    {
-        "name": "Company C",
-        "address": "789 Oak St, City, Country",
-        "phone": "345-678-9012",
-        "website": "https://companyc.com",
-        "image": "company-c.jpg",
-        "membership_level": "Bronze",
-        "info": "Additional information about Company C."
-    },
-    {
-        "name": "Company D",
-        "address": "101 Pine St, City, Country",
-        "phone": "456-789-0123",
-        "website": "https://companyd.com",
-        "image": "company-d.jpg",
-        "membership_level": "Gold",
-        "info": "Additional information about Company D."
-    },
-    {
-        "name": "Company E",
-        "address": "202 Maple St, City, Country",
-        "phone": "567-890-1234",
-        "website": "https://companye.com",
-        "image": "company-e.jpg",
-        "membership_level": "Silver",
-        "info": "Additional information about Company E."
-    },
-    {
-        "name": "Company F",
-        "address": "303 Birch St, City, Country",
-        "phone": "678-901-2345",
-        "website": "https://companyf.com",
-        "image": "company-f.jpg",
-        "membership_level": "Bronze",
-        "info": "Additional information about Company F."
-    },
-    {
-        "name": "Company G",
-        "address": "404 Cedar St, City, Country",
-        "phone": "789-012-3456",
-        "website": "https://companyg.com",
-        "image": "company-g.jpg",
-        "membership_level": "Gold",
-        "info": "Additional information about Company G."
-    }
+  {
+    "name": "Tech Solutions Congo",
+    "address": "123 Innovation Street, Brazzaville",
+    "phone": "+242 05 234 5678",
+    "website": "https://techsolutionscongo.com",
+    "image": "tech-icon.svg",
+    "membership_level": "Gold",
+    "info": "Leading technology solutions provider in Congo"
+  },
+  {
+    "name": "Green Energy Brazza",
+    "address": "45 Sustainable Avenue, Brazzaville",
+    "phone": "+242 06 876 5432",
+    "website": "https://greenenergybz.com",
+    "image": "energy-icon.svg",
+    "membership_level": "Silver",
+    "info": "Renewable energy solutions for a sustainable future"
+  },
+  {
+    "name": "Congo Fresh Foods",
+    "address": "78 Market Road, Brazzaville",
+    "phone": "+242 05 567 8901",
+    "website": "https://congofreshfoods.com",
+    "image": "food-icon.svg",
+    "membership_level": "Bronze",
+    "info": "Fresh local produce and food distribution"
+  },
+  {
+    "name": "BrazzaBuilders",
+    "address": "234 Construction Lane, Brazzaville",
+    "phone": "+242 06 123 4567",
+    "website": "https://brazzabuilders.com",
+    "image": "construction-icon.svg",
+    "membership_level": "Gold",
+    "info": "Quality construction and infrastructure development"
+  },
+  {
+    "name": "Congo Education Center",
+    "address": "56 Learning Street, Brazzaville",
+    "phone": "+242 05 890 1234",
+    "website": "https://congoeducation.org",
+    "image": "education-icon.svg",
+    "membership_level": "Silver",
+    "info": "Empowering through education and skill development"
+  },
+  {
+    "name": "Brazza Health Services",
+    "address": "789 Wellness Road, Brazzaville",
+    "phone": "+242 06 345 6789",
+    "website": "https://brazzahealth.com",
+    "image": "health-icon.svg",
+    "membership_level": "Gold",
+    "info": "Comprehensive healthcare solutions"
+  },
+  {
+    "name": "Congo Arts & Crafts",
+    "address": "321 Creative Avenue, Brazzaville",
+    "phone": "+242 05 678 9012",
+    "website": "https://congoarts.com",
+    "image": "art-icon.svg",
+    "membership_level": "Bronze",
+    "info": "Promoting local artisans and cultural heritage"
+  }
 ]
