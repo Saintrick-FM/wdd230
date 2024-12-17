@@ -1,4 +1,4 @@
-import { OPENWEATHER_API_KEY } from '../../config.js'; 
+const OPENWEATHER_API_KEY = '5fd55e0656da9f70aa984baf55c53a94';
 const city = 'Brazzaville'; // City for weather data
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${OPENWEATHER_API_KEY}&units=metric`;
 

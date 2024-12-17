@@ -1,4 +1,4 @@
-import { OPENWEATHER_API_KEY } from '../../config.js'; // Import the API key from the config file
+const OPENWEATHER_API_KEY = '5fd55e0656da9f70aa984baf55c53a94';
 
 const lat = '49.75'; // Latitude for Trier, Germany
 const lon = '6.64'; // Longitude for Trier, Germany
