@@ -22,7 +22,6 @@ async function displayMembers() {
             memberCard.classList.add('member-card');
             
             memberCard.innerHTML = `
-                
                 <div class="member-info">
                     <h3>${member.name}</h3>
                     <p>${member.address}</p>
