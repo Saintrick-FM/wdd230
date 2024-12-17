@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Company A",
+        "address": "123 Main St, City, Country",
+        "phone": "123-456-7890",
+        "website": "https://companya.com",
+        "image": "company-a.jpg",
+        "membership_level": "Gold",
+        "info": "Additional information about Company A."
+    },
+    {
+        "name": "Company B",
+        "address": "456 Elm St, City, Country",
+        "phone": "234-567-8901",
+        "website": "https://companyb.com",
+        "image": "company-b.jpg",
+        "membership_level": "Silver",
+        "info": "Additional information about Company B."
+    },
+    {
+        "name": "Company C",
+        "address": "789 Oak St, City, Country",
+        "phone": "345-678-9012",
+        "website": "https://companyc.com",
+        "image": "company-c.jpg",
+        "membership_level": "Bronze",
+        "info": "Additional information about Company C."
+    },
+    {
+        "name": "Company D",
+        "address": "101 Pine St, City, Country",
+        "phone": "456-789-0123",
+        "website": "https://companyd.com",
+        "image": "company-d.jpg",
+        "membership_level": "Gold",
+        "info": "Additional information about Company D."
+    },
+    {
+        "name": "Company E",
+        "address": "202 Maple St, City, Country",
+        "phone": "567-890-1234",
+        "website": "https://companye.com",
+        "image": "company-e.jpg",
+        "membership_level": "Silver",
+        "info": "Additional information about Company E."
+    },
+    {
+        "name": "Company F",
+        "address": "303 Birch St, City, Country",
+        "phone": "678-901-2345",
+        "website": "https://companyf.com",
+        "image": "company-f.jpg",
+        "membership_level": "Bronze",
+        "info": "Additional information about Company F."
+    },
+    {
+        "name": "Company G",
+        "address": "404 Cedar St, City, Country",
+        "phone": "789-012-3456",
+        "website": "https://companyg.com",
+        "image": "company-g.jpg",
+        "membership_level": "Gold",
+        "info": "Additional information about Company G."
+    }
+]
