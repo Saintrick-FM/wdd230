@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector("nav");
   const burgerMenu = document.querySelector(".burger-menu");
   
+  // Get the burger menu and navigation elements
+  const navbar = document.querySelector('.navbar');
+
   burgerMenu.addEventListener("click", () => {
     nav.classList.toggle("close");
     burgerMenu.classList.toggle("open");
@@ -18,6 +21,18 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.style.display = "flex";
     } else {
       nav.style.display = "none";
+    }
+
+    // Toggle menu when burger is clicked
+    burgerMenu.classList.toggle('active');
+    navbar.classList.toggle('active');
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!burgerMenu.contains(e.target) && !navbar.contains(e.target)) {
+      burgerMenu.classList.remove('active');
+      navbar.classList.remove('active');
     }
   });
 });

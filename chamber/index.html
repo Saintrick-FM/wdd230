@@ -50,6 +50,10 @@
     
   </head>
   <body>
+    <div id="meet-greet-banner" class="banner" style="display: none;">
+      Join us for the Chamber of Commerce Meet and Greet this Wednesday at 7:00 p.m.! 
+      <button id="close-banner" aria-label="Close banner">Close banner</button>
+    </div>
     <header class="header">
       <img
         class="logo"
@@ -149,17 +153,14 @@
         <h2>Brazzaville Weather Update</h2>
         <div class="divider"></div>
         <div class="weather-container">
-          <div class="weather-icon">
-            <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png" alt="wheather icon">
-          
-          
+          <div class="current-weather">
+            <img id="weather-icon" src="" alt="Weather icon">
+            <p id="current-temp"></p>
+            <p id="weather-desc"></p>
           </div>
-          <div class="weather-details">
-            <p class="temperature">20°C to 33°C</p>
-            <p class="description">
-              Warm and humid with occasional tropical rain showers.
-            </p>
-            <p class="location">Brazzaville, Congo</p>
+          <div class="forecast">
+            <h3>3-Day Forecast</h3>
+            <div id="forecast-container"></div>
           </div>
         </div>
       </section>
@@ -248,11 +249,13 @@
      
       </div>
       <p>
-        &copy;<span id="year"></span>🇨🇬 Brazzaville Chamber of Commerce - 👨‍🎓 Francy Saintrick Malonga
+        &copy;<span id="year"></span> Brazzaville Chamber of Commerce - Francy Saintrick Malonga
       </p>
       <p>All rights reserved</p>
       <p id="lastModified"></p>
     </footer>
     <script src="scripts/index.js"></script>
+    <script src="scripts/weather.js"></script>
+    <script src="scripts/home.js"></script>
   </body>
 </html>
