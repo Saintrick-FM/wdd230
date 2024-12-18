@@ -14,16 +14,28 @@ listViewBtn.addEventListener('click', () => {
 
 async function loadMembers() {
     try {
-        const response = await fetch('data/members.json');
-        if (!response.ok) throw new Error('Failed to load member data');
+        const response = await fetch('./data/members.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const data = await response.json();
-        displayMembers(data.members);
+        if (!data || !Array.isArray(data)) {
+            throw new Error('Invalid data format');
+        }
+        displayMembers(data);
     } catch (error) {
-        displayError('Unable to load member directory. Please try again later.');
+        displayError(`Unable to load member directory: ${error.message}`);
     }
 }
 
 function displayMembers(members) {
+    if (!membersContainer) {
+        console.error('Members container not found');
+        return;
+    }
+    
+    membersContainer.innerHTML = ''; // Clear existing content
+    
     members.forEach(member => {
         const memberCard = document.createElement('div');
         memberCard.classList.add('member-card');
@@ -32,7 +44,7 @@ function displayMembers(members) {
             <div class="member-info">
                 <h3>${member.name}</h3>
                 <p>${member.address}</p>
-                <p> ${member.phone}</p>
+                <p>${member.phone}</p>
                 <p><a href="${member.website}" target="_blank">Website</a></p>
                 <p>Membership Level: ${member.membership_level}</p>
                 <p>${member.info}</p>
