@@ -15,9 +15,29 @@ async function getLinks() {
             throw new Error('Network response was not ok');
         }
         const {weeks} = await response.json();
-        weeks&& displayLinks(weeks); // Call the displayLinks function with the data
+        weeks && displayLinks(weeks); // Call the displayLinks function with the data
     } catch (error) {
-        console.error('Error fetching links data:', error);
+        displayError('Unable to load learning activities. Please try again later.');
+    }
+}
+
+function displayError(message) {
+    const container = document.querySelector('.learning-activities');
+    if (container) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.style.cssText = `
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.25rem;
+            margin: 1rem 0;
+            text-align: center;
+        `;
+        errorDiv.textContent = message;
+        container.innerHTML = '';
+        container.appendChild(errorDiv);
     }
 }
 

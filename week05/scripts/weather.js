@@ -16,10 +16,12 @@ async function fetchWeather() {
             throw new Error(await response.text());
         }
     } catch (error) {
-        console.error('Error fetching weather data:', error);
+        displayWeatherError('Unable to load weather data. Please try again later.');
     }
 }
-
+function displayWeatherError(message) {
+    document.getElementById('current-temp').innerText = message;
+}
 function updateWeatherCard(data) {
     const temperature = data.main.temp;
     const description = data.weather[0].description;

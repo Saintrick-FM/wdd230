@@ -24,6 +24,7 @@ function handleBanner() {
 async function initWeather(apiKey) {
     try {
         const response = await fetch(WEATHER_API_URL(apiKey));
+        if (!response.ok) throw new Error('Weather data not available');
         const data = await response.json();
         
         // Update current weather
@@ -32,12 +33,15 @@ async function initWeather(apiKey) {
         document.getElementById('weather-icon').src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
         
         const forecastResponse = await fetch(FORECAST_API_URL(apiKey));
+        if (!forecastResponse.ok) throw new Error('Forecast data not available');
         const forecastData = await forecastResponse.json();
         
         // Get one forecast per day for next 3 days
         const dailyForecasts = forecastData.list.filter((forecast, index) => index % 8 === 0).slice(0, 3);
         
         const forecastContainer = document.getElementById('forecast-container');
+        if (!forecastContainer) return;
+        
         forecastContainer.innerHTML = '';
 
         dailyForecasts.forEach(forecast => {
@@ -55,7 +59,19 @@ async function initWeather(apiKey) {
             forecastContainer.appendChild(forecastDay);
         });
     } catch (error) {
-        console.error('Error fetching weather:', error);
+        displayError('weather');
+    }
+}
+
+// Display error message in the weather container
+function displayError(type) {
+    const container = document.querySelector(type === 'weather' ? '#current-weather' : '.card-container');
+    if (container) {
+        const errorMessage = document.createElement('p');
+        errorMessage.className = 'error-message';
+        errorMessage.textContent = `Unable to load ${type} data. Please try again later.`;
+        container.innerHTML = '';
+        container.appendChild(errorMessage);
     }
 }
 
@@ -63,6 +79,7 @@ async function initWeather(apiKey) {
 async function loadMembers() {
     try {
         const response = await fetch('data/members.json');
+        if (!response.ok) throw new Error('Member data not available');
         const data = await response.json();
         
         // Filter for silver and gold members
@@ -79,6 +96,8 @@ async function loadMembers() {
         
         // Update spotlight cards
         const cardContainer = document.querySelector('.card-container');
+        if (!cardContainer) return;
+        
         cardContainer.innerHTML = '';
         
         selectedMembers.forEach(member => {
@@ -93,7 +112,7 @@ async function loadMembers() {
             cardContainer.appendChild(card);
         });
     } catch (error) {
-        console.error('Error loading members:', error);
+        displayError('member');
     }
 }
 

@@ -11,9 +11,10 @@ async function fetchWeather() {
         const data = await response.json();
         updateWeatherCard(data);
     } catch (error) {
-        console.error('Error fetching weather data:', error);
+        displayWeatherError('Unable to load weather data. Please try again later.');
     }
 }
+
 function updateWeatherCard(data) {
     const temperature = data.main.temp;
     const description = data.weather[0].description;
@@ -21,4 +22,9 @@ function updateWeatherCard(data) {
     document.getElementById('temperature').innerText = `😍 ${temperature} °C, ${description}`;
     document.getElementById('weather-icon').src = `http://openweathermap.org/img/w/${icon}.png`;
 }
+
+function displayWeatherError(message) {
+    document.getElementById('temperature').innerText = message;
+}
+
 fetchWeather();
